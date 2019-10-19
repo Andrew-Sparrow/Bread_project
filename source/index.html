@@ -66,10 +66,42 @@
   </div>
   <div class="address">
     <h2 class="address__title">Адрес и способ доставки</h2>
-    <input class="address__country" id="country">
+    <select class="address__country" type="" id="country">
+      <option value="Russia">Россия</option>
+      <option value="Germany">Германия</option>
+    </select>
     <label class="address__label" for="country">Страна</label>
     <input class="address__city" id="city">
     <label class="address__label" for="city">Город</label>
+  </div>
+  <div class="delivery">
+    <h3 class="delivery__title">
+      Способ доставки
+    </h3>
+    <input class="delivery__radio" type="radio" id="radio-courier">
+    <label for="radio-courier">
+      Доставка курьерской службой — 710 ₽
+    </label>
+    <p class="delivery__notice">
+      (Срок доставки — 1–3 дня)
+    </p>
+
+    <input class="delivery__radio" type="radio" id="radio-transport">
+    <label for="radio-transport">
+      Доставка транспортной компанией — 210 ₽
+    </label>
+    <p class="delivery__notice">
+      Данный вид доставки возможен при полной
+      предоплате заказа. Срок доставки — 3–5 дней)
+    </p>
+
+    <input class="delivery__radio" type="radio" id="radio-pickup">
+    <label for="radio-pickup">
+      Самовывоз — 180 ₽
+    </label>
+    <p class="delivery__notice">
+      Доставка до пункта самовывоза займет 2–3 дня
+    </p>
   </div>
 </main>
 <footer class="footer">
