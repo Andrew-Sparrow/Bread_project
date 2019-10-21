@@ -48,63 +48,209 @@
   </div>
 </header>
 <main class="main">
-  <h1 class="main__order">Оформление заказа</h1>
-  <div class="tab">
-    <div class="tab__individual">Физическое лицо</div>
-    <div class="tab__entity">Юридическое лицо</div>
-  </div>
-  <div class="contacts">
-    <h2 class="contacts__title">Контактные данные</h2>
-    <input class="contacts__name" id="name">
-    <label class="contacts__label" for="name">Имя</label>
-    <input class="contacts__surname" id="surname">
-    <label class="contacts__label" for="surname">Фамилия</label>
-    <input class="contacts__email" id="email">
-    <label class="contacts__label" for="email">Эл.почта</label>
-    <input class="contacts__phone" id="phone">
-    <label class="contacts__label" for="phone">Номер телефона</label>
-  </div>
-  <div class="address">
-    <h2 class="address__title">Адрес и способ доставки</h2>
-    <select class="address__country" type="" id="country">
-      <option value="Russia">Россия</option>
-      <option value="Germany">Германия</option>
-    </select>
-    <label class="address__label" for="country">Страна</label>
-    <input class="address__city" id="city">
-    <label class="address__label" for="city">Город</label>
-  </div>
-  <div class="delivery">
-    <h3 class="delivery__title">
-      Способ доставки
-    </h3>
-    <input class="delivery__radio" type="radio" id="radio-courier">
-    <label for="radio-courier">
-      Доставка курьерской службой — 710 ₽
-    </label>
-    <p class="delivery__notice">
-      (Срок доставки — 1–3 дня)
-    </p>
-
-    <input class="delivery__radio" type="radio" id="radio-transport">
-    <label for="radio-transport">
-      Доставка транспортной компанией — 210 ₽
-    </label>
-    <p class="delivery__notice">
-      Данный вид доставки возможен при полной
-      предоплате заказа. Срок доставки — 3–5 дней)
-    </p>
-
-    <input class="delivery__radio" type="radio" id="radio-pickup">
-    <label for="radio-pickup">
-      Самовывоз — 180 ₽
-    </label>
-    <p class="delivery__notice">
-      Доставка до пункта самовывоза займет 2–3 дня
-    </p>
-  </div>
+  <section class="formalization">
+    <h1 class="formalization__header">Оформление заказа</h1>
+    <div class="tab">
+      <div class="tab__individual">Физическое лицо</div>
+      <div class="tab__entity">Юридическое лицо</div>
+    </div>
+    <div class="contacts">
+      <h2 class="contacts__title">Контактные данные</h2>
+      <input class="contacts__name" id="name">
+      <label class="contacts__label" for="name">Имя</label>
+      <input class="contacts__surname" id="surname">
+      <label class="contacts__label" for="surname">Фамилия</label>
+      <input class="contacts__email" id="email">
+      <label class="contacts__label" for="email">Эл.почта</label>
+      <input class="contacts__phone" id="phone">
+      <label class="contacts__label" for="phone">Номер телефона</label>
+    </div>
+    <div class="address">
+      <h2 class="address__title">Адрес и способ доставки</h2>
+      <select class="address__country" type="" id="country">
+        <option value="Russia">Россия</option>
+        <option value="Germany">Германия</option>
+      </select>
+      <label class="address__label" for="country">Страна</label>
+      <input class="address__city" id="city">
+      <label class="address__label" for="city">Город</label>
+    </div>
+    <div class="delivery">
+      <h3 class="delivery__title">
+        Способ доставки
+      </h3>
+      <input class="delivery__radio" type="radio" id="radio-courier">
+      <label for="radio-courier">
+        Доставка курьерской службой — 710 ₽
+      </label>
+      <p class="delivery__notice">
+        (Срок доставки — 1–3 дня)
+      </p>
+  
+      <input class="delivery__radio" type="radio" id="radio-transport">
+      <label for="radio-transport">
+        Доставка транспортной компанией — 210 ₽
+      </label>
+      <p class="delivery__notice">
+        Данный вид доставки возможен при полной
+        предоплате заказа. Срок доставки — 3–5 дней)
+      </p>
+  
+      <input class="delivery__radio" type="radio" id="radio-pickup">
+      <label for="radio-pickup">
+        Самовывоз — 180 ₽
+      </label>
+      <p class="delivery__notice">
+        Доставка до пункта самовывоза займет 2–3 дня
+      </p>
+    </div>
+    <div class="point">
+      <h3 class="point__paragraph">
+        Пункт самовывоза
+      </h3>
+      <select class="point__select" id="point">
+        <option class="point__option">Кузнецкий мост</option>
+        <option class="point__option">Говорово</option>
+        <option class="point__option">Киевская</option>
+      </select>
+      <label for="point">
+        Станция метро
+      </label>
+      <iframe class="point__map"></iframe>
+    </div>
+    <div class="comment">
+      <h3 class="comment__header">Комментарий к заказу</h3>
+      <textarea class="comment__textarea"></textarea>
+    </div>
+    <a class="main__button>">К выбору способа оплаты</a>
+  </section>
+  <section class="order">
+    <h3 class="order__header">Ваш заказ</h3>
+    <table class="order__table">
+      <tr class="order__row">
+        <td class="order__cell">
+          Мельница ручная Kornkraft Mia aMola
+        </td>
+        <td class="order__cell">
+          18 990 ₽
+        </td>
+      </tr>
+      <tr class="order__row">
+        <td class="order__cell">
+          Пшеница БИО, 1 кг (Россия) (2 шт)
+        </td>
+        <td class="order__cell">
+          420 ₽
+        </td>
+      </tr>
+      <tr class="order__row">
+        <td class="order__cell">
+          Пшеница БИО, 1 кг (Россия) (2 шт)
+        </td>
+        <td class="order__cell">
+          420 ₽
+        </td>
+      </tr>
+      <tr class="order__row">
+        <td class="order__cell">
+          Размер скидки (5%)
+        </td>
+        <td class="order__cell">
+          420 ₽
+        </td>
+      </tr>
+      <tr class="order__row">
+        <td class="order__cell">
+          Итого
+        </td>
+        <td class="order__cell">
+          18 344 ₽
+        </td>
+      </tr>
+      <tr class="order__row">
+        <td class="order__cell">
+          Самовывоз
+        </td>
+        <td class="order__cell">
+          390 ₽
+        </td>
+      </tr>
+      <tr class="order__row">
+        <td class="order__cell">
+          Сумма с доставкой
+        </td>
+        <td class="order__cell">
+          18 734 ₽
+        </td>
+      </tr>
+    </table>
+  </section>
 </main>
 <footer class="footer">
+  <section class="footer__top">
+    <div class="footer__block">
+      <h4 class="footer__header">Каталог</h4>
+      <ul class="footer__list footer__list--left">
+        <li class="footer__item">Мельницы</li>
+        <li class="footer__item">Техника</li>
+        <li class="footer__item">Для выпечки</li>
+        <li class="footer__item">Посуда</li>
+      </ul>
+      <ul class="footer__list footer__list--right">
+        <li class="footer__item">Проращиватели</li>
+        <li class="footer__item">Детям</li>
+        <li class="footer__item">Чай из Непала</li>
+      </ul>
+    </div>
+    <div class="footer__block">
+      <h4 class="footer__header">Информация</h4>
+      <ul class="footer__list">
+        <li class="footer__item">Доставка и самовывоз</li>
+        <li class="footer__item">О магазине</li>
+        <li class="footer__item">10 причин покупать у нас</li>
+        <li class="footer__item">Оплата</li>
+        <li class="footer__item">Мастер-классы</li>
+        <li class="footer__item">Блог</li>
+      </ul>
+    </div>
+    <div class="footer__block">
+      <h4 class="footer__header">Контакты</h4>
+      <ul class="footer__list">
+        <li class="footer__item">+7 (495) 789 41 43 — Москва</li>
+        <li class="footer__item">+7 (812) 385 55 86 — Санкт-Петербург</li>
+        <li class="footer__item">+7 (800) 555 33 86 — вся Россия</li>
+        <li class="footer__item">Обратная связь</li>
+        <li class="footer__item">info@hlebomoli.ru</li>
+      </ul>
+    </div>
+    <div class="footer__block">
+      <h4 class="footer__header">Вступайте в клуб</h4>
+      <p class="footer__paragraph">
+        Подпишитесь на наши новости и будьте
+        в кусре всех акций, скидок и новых
+        поступлений, а также самых изысканных
+        рецептов.
+      </p>
+      <input class="footer__input">
+    </div>
+  </section>
+  <section class="footer__bottom">
+   <p class="footer__trademark">Хлебомолы © 2014–2015</p>
+   <ul class="footer__socials">
+     <li class="footer__social">
+       <img class="footer__img" src="#" alt="Хлебомолы в контакте">
+     </li>
+     <li class="footer__social">
+       <img class="footer__img" src="#" alt="Хлебомолы в фейсбуке">
+     </li>
+     <li class="footer__social">
+       <img class="footer__img" src="#" alt="Хлебомолы в инстаграмме">
+     </li>
+     <li class="footer__social">
+       <img class="footer__img" src="#" alt="Хлебомолы в соцсети">
+     </li>
+   </ul>
+  </section>
 </footer>
 
 <script>
