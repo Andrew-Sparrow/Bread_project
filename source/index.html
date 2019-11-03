@@ -23,15 +23,15 @@
   </div>
   <div class="middle">
     <div class="logo">
-      <img class="logo__img" src="#" alt="Логотип Хлебомолы">
+      <img class="logo__img" src="img/logo-text.png" width="186" height="26" alt="Логотип Хлебомолы">
       <p class="logo__description">
         Технологии правильного питания
       </p>
     </div>
-    <input class="middle__search" type="search">
+    <input class="middle__search" type="search" placeholder="Найти что-нибудь">
     <div class="phone">
       <p class="phone__number">+7 800 555-33-86</p>
-      <p class="phone__back>">Обратный звонок</p>
+      <p class="phone__back">Обратный звонок</p>
     </div>
   </div>
   <div class="bottom">
@@ -44,7 +44,9 @@
       <li class="technics__item">Детям</li>
       <li class="technics__item">Чай из Непала</li>
     </ul>
-    <div class="sum">13 990 ₽</div>
+    <div class="sum">
+      13 990 ₽
+    </div>
   </div>
 </header>
 <main class="main">
@@ -56,24 +58,24 @@
     </div>
     <div class="contacts">
       <h2 class="contacts__title">Контактные данные</h2>
-      <input class="contacts__name" id="name">
       <label class="contacts__label" for="name">Имя</label>
-      <input class="contacts__surname" id="surname">
+      <input class="contacts__name" id="name">
       <label class="contacts__label" for="surname">Фамилия</label>
-      <input class="contacts__email" id="email">
+      <input class="contacts__surname" id="surname">
       <label class="contacts__label" for="email">Эл.почта</label>
-      <input class="contacts__phone" id="phone">
+      <input class="contacts__email" id="email">
       <label class="contacts__label" for="phone">Номер телефона</label>
+      <input class="contacts__phone" id="phone">
     </div>
     <div class="address">
       <h2 class="address__title">Адрес и способ доставки</h2>
+      <label class="address__label" for="country">Страна</label>
       <select class="address__country" type="" id="country">
         <option value="Russia">Россия</option>
         <option value="Germany">Германия</option>
       </select>
-      <label class="address__label" for="country">Страна</label>
-      <input class="address__city" id="city">
       <label class="address__label" for="city">Город</label>
+      <input class="address__city" id="city">
     </div>
     <div class="delivery">
       <h3 class="delivery__title">
@@ -108,14 +110,14 @@
       <h3 class="point__title">
         Пункт самовывоза
       </h3>
+      <label class="point__label" for="point">
+        Станция метро
+      </label>
       <select class="point__select" id="point">
         <option class="point__option">Кузнецкий мост</option>
         <option class="point__option">Говорово</option>
         <option class="point__option">Киевская</option>
       </select>
-      <label class="point__label" for="point">
-        Станция метро
-      </label>
       <iframe class="point__map"></iframe>
     </div>
     <div class="comment">
@@ -151,38 +153,42 @@
           420 ₽
         </td>
       </tr>
-      <tr class="order__row">
-        <td class="order__name">
-          Размер скидки (5%)
-        </td>
-        <td class="order__price">
-          420 ₽
-        </td>
-      </tr>
-      <tr class="order__row">
-        <td class="order__name">
-          Итого
-        </td>
-        <td class="order__price">
-          18 344 ₽
-        </td>
-      </tr>
-      <tr class="order__row">
-        <td class="order__name">
-          Самовывоз
-        </td>
-        <td class="order__price">
-          390 ₽
-        </td>
-      </tr>
-      <tr class="order__row">
-        <td class="order__calculated">
-          Сумма с доставкой
-        </td>
-        <td class="order__total">
-          18 734 ₽
-        </td>
-      </tr>
+      <tbody class="order__discount">
+        <tr class="order__row">
+          <td class="order__name">
+            Размер скидки (5%)
+          </td>
+          <td class="order__price">
+            420 ₽
+          </td>
+        </tr>
+        <tr class="order__row">
+          <td class="order__name">
+            Итого
+          </td>
+          <td class="order__price">
+            18 344 ₽
+          </td>
+        </tr>
+        <tr class="order__row">
+          <td class="order__name">
+            Самовывоз
+          </td>
+          <td class="order__price">
+            390 ₽
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="order__sum">
+        <tr class="order__row">
+          <td class="order__calculated">
+            Сумма с доставкой
+          </td>
+          <td class="order__total">
+            18 734 ₽
+          </td>
+        </tr>
+      </tbody>
     </table>
   </section>
 </main>

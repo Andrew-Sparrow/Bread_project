@@ -1,8 +1,23 @@
+.order {
+  border: 1px solid #f0e4ca;
+  box-shadow: 0 14px 12px -8px #f3ead9;
+}
+
 .order__header {
+  margin-left: 10px;
   font-family: "Georgia", sans-serif;
   font-weight: 400;
   font-style: italic;
   color: @red-brown;
+}
+
+.order__table {
+  border-collapse: collapse;
+}
+
+.order__calculated,
+.order__name {
+  padding: 13px;
 }
 
 .order__name {
@@ -10,5 +25,26 @@
 }
 
 .order__price {
+  padding: 7px;
   color: @red-brown;
+}
+
+.order__calculated {
+  color: @red-brown;
+}
+
+.order__total {
+  font-weight: 700;
+}
+
+.order__discount {
+  padding: 10px 10px;
+  background-color: #fdfcfa;
+  border-top: 1px dashed #f0e4ca;
+  border-bottom: 1px dashed #f0e4ca;
+}
+
+.order__sum {
+  padding: 10px 10px;
+  background-color: #fcfaf5;
 }
