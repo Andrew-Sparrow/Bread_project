@@ -1,3 +1,14 @@
+.footer {
+  background-image: url("../img/bg-footer-mobile.jpg");
+  background-repeat: no-repeat;
+}
+
+.footer__container {
+  margin: 0 auto;
+  width: 280px;
+  height: 100%;
+}
+
 .footer__list,
 .footer__socials {
   list-style: none;
@@ -17,4 +28,26 @@
 .footer__paragraph,
 .footer__item {
   color: @light-brown;
+}
+
+.footer__input {
+  border: 1px solid #c4b7b1;
+  border-radius: 1px;
+}
+
+.footer__input::placeholder {
+  color: @light-brown;
+  font-size: 10px;
+  font-family: @calibri;
+}
+
+.footer__network,
+.footer__link {
+  font-family: @calibri;
+  color: @light-brown;
+  text-decoration: none;
+}
+
+.footer__socials {
+  display: flex;
 }
