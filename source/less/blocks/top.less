@@ -6,3 +6,42 @@
   font-size: 18px;
   font-weight: 400;
 }
+
+.top__account,
+.top__address {
+  position: relative;
+  font-style: normal;
+  margin-left: 20px;
+}
+
+.top__address {
+  margin-bottom: 10px;
+}
+
+.top__account {
+  margin-bottom: 20px;
+}
+
+.top__account,
+.top__city {
+  display: inline-block;
+  border-bottom: 1px dotted #c4bbb4;
+}
+
+.top__address::before {
+  position: absolute;
+  content: url("../img/map-point.png");
+  width: 42px;
+  height: 64px;
+  top: 0;
+  left: -20px;
+}
+
+.top__account::before {
+  position: absolute;
+  content: url("../img/account.png");
+  width: 42px;
+  height: 64px;
+  top: 0;
+  left: -20px;
+}
