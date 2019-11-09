@@ -5,6 +5,8 @@
   color: @light-brown;
   font-size: 18px;
   font-weight: 400;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #dcd2c8;
 }
 
 .top__account,
@@ -30,18 +32,24 @@
 
 .top__address::before {
   position: absolute;
-  content: url("../img/map-point.png");
-  width: 42px;
-  height: 64px;
+  content: "";
+  background-image: url("../img/map-point.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 20px;
   top: 0;
   left: -20px;
 }
 
 .top__account::before {
   position: absolute;
-  content: url("../img/account.png");
-  width: 42px;
-  height: 64px;
+  content: "";
+  background-image: url("../img/account.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 16px;
+  height: 20px;
   top: 0;
   left: -20px;
 }
