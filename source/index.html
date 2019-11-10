@@ -51,18 +51,46 @@
     <input class="middle__search" type="search" placeholder="Найти что-нибудь">
     <div class="phone">
       <p class="phone__number">+7 800 555-33-86</p>
-      <p class="phone__back">Обратный звонок</p>
+      <button class="phone__back" type="button">Обратный звонок</button>
     </div>
   </div>
   <div class="bottom">
     <ul class="technics">
-      <li class="technics__item">Мельницы</li>
-      <li class="technics__item">Техника</li>
-      <li class="technics__item">Для выпечки</li>
-      <li class="technics__item">Посуда</li>
-      <li class="technics__item">Проращиватели</li>
-      <li class="technics__item">Детям</li>
-      <li class="technics__item">Чай из Непала</li>
+      <li class="technics__item">
+        <a class="technics__link" href="#">
+          Мельницы
+        </a>
+      </li>
+      <li class="technics__item">
+        <a class="technics__link" href="#">
+          Техника
+        </a>
+      </li>
+      <li class="technics__item">
+        <a class="technics__link" href="#">
+          Для выпечки
+        </a>
+      </li>
+      <li class="technics__item">
+        <a class="technics__link" href="#">
+          Посуда
+        </a>
+      </li>
+      <li class="technics__item">
+        <a class="technics__link" href="#">
+          Проращиватели
+        </a>
+      </li>
+      <li class="technics__item">
+        <a class="technics__link" href="#">
+          Детям
+        </a>
+      </li>
+      <li class="technics__item">
+        <a class="technics__link" href="#">
+          Чай из Непала
+        </a>
+      </li>
     </ul>
     <div class="sum">
       13 990 ₽
@@ -70,6 +98,71 @@
   </div>
 </header>
 <main class="main">
+  <section class="order">
+    <h3 class="order__header">Ваш заказ</h3>
+    <table class="order__table">
+      <tr class="order__row">
+        <td class="order__name">
+          Мельница ручная Kornkraft&nbspMia&nbspaMola
+        </td>
+        <td class="order__price">
+          18 990 ₽
+        </td>
+      </tr>
+      <tr class="order__row">
+        <td class="order__name">
+          Пшеница БИО, 1 кг (Россия) (2 шт)
+        </td>
+        <td class="order__price">
+          420 ₽
+        </td>
+      </tr>
+      <tr class="order__row">
+        <td class="order__name">
+          Пшеница БИО, 1 кг (Россия) (2 шт)
+        </td>
+        <td class="order__price">
+          420 ₽
+        </td>
+      </tr>
+      <tbody class="order__discount">
+      <tr class="order__row">
+        <td class="order__name">
+          Размер скидки (5%)
+        </td>
+        <td class="order__price">
+          420 ₽
+        </td>
+      </tr>
+      <tr class="order__row">
+        <td class="order__name">
+          Итого
+        </td>
+        <td class="order__price">
+          18 344 ₽
+        </td>
+      </tr>
+      <tr class="order__row">
+        <td class="order__name">
+          Самовывоз
+        </td>
+        <td class="order__price">
+          390 ₽
+        </td>
+      </tr>
+      </tbody>
+      <tbody class="order__sum">
+      <tr class="order__row">
+        <td class="order__calculated">
+          Сумма с доставкой
+        </td>
+        <td class="order__total">
+          18 734 ₽
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
   <section class="formalization">
     <h1 class="formalization__header">Оформление заказа</h1>
     <div class="tab">
@@ -101,30 +194,36 @@
       <h3 class="delivery__title">
         Способ доставки
       </h3>
-      <input class="delivery__radio" type="radio" id="radio-courier">
-      <label class="delivery__label" for="radio-courier">
-        Доставка курьерской службой — 710 ₽
-      </label>
-      <p class="delivery__notice">
-        (Срок доставки — 1–3 дня)
-      </p>
-
-      <input class="delivery__radio" type="radio" id="radio-transport">
-      <label class="delivery__label" for="radio-transport">
-        Доставка транспортной компанией — 210 ₽
-      </label>
-      <p class="delivery__notice">
-        Данный вид доставки возможен при полной
-        предоплате заказа. Срок доставки — 3–5 дней)
-      </p>
-
-      <input class="delivery__radio" type="radio" id="radio-pickup">
-      <label class="delivery__label" for="radio-pickup">
-        Самовывоз — 180 ₽
-      </label>
-      <p class="delivery__notice">
-        Доставка до пункта самовывоза займет 2–3 дня
-      </p>
+      <ul class="delivery__options">
+        <li class="delivery__item">
+          <input class="delivery__radio" type="radio" name="delivery-option" id="radio-courier">
+          <label class="delivery__label" for="radio-courier">
+            Доставка курьерской службой — 710 ₽
+            <span class="delivery__notice">
+              (Срок доставки — 1–3 дня)
+            </span>
+          </label>
+        </li>
+        <li class="delivery__item">
+          <input class="delivery__radio" type="radio" name="delivery-option" id="radio-transport">
+          <label class="delivery__label" for="radio-transport">
+            Доставка транспортной компанией — 210 ₽
+            <span class="delivery__notice">
+              Данный вид доставки возможен при полной
+              предоплате заказа. Срок доставки — 3–5 дней)
+            </span>
+          </label>
+        </li>
+        <li class="delivery__item">
+          <input class="delivery__radio" type="radio" name="delivery-option" id="radio-pickup" checked>
+          <label class="delivery__label" for="radio-pickup">
+            Самовывоз — 180 ₽
+            <span class="delivery__notice">
+              Доставка до пункта самовывоза займет 2–3 дня
+            </span>
+          </label>
+        </li>
+      </ul>
     </div>
     <div class="point">
       <h3 class="point__title">
@@ -138,78 +237,13 @@
         <option class="point__option">Говорово</option>
         <option class="point__option">Киевская</option>
       </select>
-      <iframe class="point__map"></iframe>
+      <iframe class="point__map" src="https://yandex.ru/map-widget/v1/-/CGwTnAmA" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>
     </div>
     <div class="comment">
       <h3 class="comment__header">Комментарий к заказу</h3>
-      <textarea class="comment__textarea"></textarea>
+      <textarea class="comment__textarea" rows="5" cols="38"></textarea>
     </div>
     <a class="main__button">К выбору способа оплаты</a>
-  </section>
-  <section class="order">
-    <h3 class="order__header">Ваш заказ</h3>
-    <table class="order__table">
-      <tr class="order__row">
-        <td class="order__name">
-          Мельница ручная Kornkraft&nbspMia&nbspaMola
-        </td>
-        <td class="order__price">
-          18 990 ₽
-        </td>
-      </tr>
-      <tr class="order__row">
-        <td class="order__name">
-          Пшеница БИО, 1 кг (Россия) (2 шт)
-        </td>
-        <td class="order__price">
-          420 ₽
-        </td>
-      </tr>
-      <tr class="order__row">
-        <td class="order__name">
-          Пшеница БИО, 1 кг (Россия) (2 шт)
-        </td>
-        <td class="order__price">
-          420 ₽
-        </td>
-      </tr>
-      <tbody class="order__discount">
-        <tr class="order__row">
-          <td class="order__name">
-            Размер скидки (5%)
-          </td>
-          <td class="order__price">
-            420 ₽
-          </td>
-        </tr>
-        <tr class="order__row">
-          <td class="order__name">
-            Итого
-          </td>
-          <td class="order__price">
-            18 344 ₽
-          </td>
-        </tr>
-        <tr class="order__row">
-          <td class="order__name">
-            Самовывоз
-          </td>
-          <td class="order__price">
-            390 ₽
-          </td>
-        </tr>
-      </tbody>
-      <tbody class="order__sum">
-        <tr class="order__row">
-          <td class="order__calculated">
-            Сумма с доставкой
-          </td>
-          <td class="order__total">
-            18 734 ₽
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </section>
 </main>
 <footer class="footer">
@@ -252,9 +286,6 @@
           <li class="footer__item">
             <a class="footer__link" href="#">О магазине</a>
             </li>
-          <li class="footer__item">
-            <a class="footer__link" href="#">10 причин покупать у нас</a>
-          </li>
           <li class="footer__item">
             <a class="footer__link" href="#">10 причин покупать у нас</a>
           </li>

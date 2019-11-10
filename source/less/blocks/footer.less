@@ -1,12 +1,21 @@
 .footer {
-  background-image: url("../img/bg-footer-mobile.jpg");
-  background-repeat: no-repeat;
+  background:
+    url("../img/bg-footer-mobile.jpg") left top no-repeat,
+    url("../img/bg-top.png") left 35px top 100px repeat;
+  background-color: #f6f3ef;
 }
 
 .footer__container {
   margin: 0 auto;
   width: 280px;
   height: 100%;
+}
+
+.footer__socials {
+  display: flex;
+  width: 280px;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
 }
 
 .footer__list,
@@ -22,6 +31,9 @@
   font-weight: 400;
   font-style: italic;
   color: @red-brown;
+  margin: 0;
+  padding-top: 30px;
+  margin-bottom: 15px;
 }
 
 .footer__trademark,
@@ -30,9 +42,20 @@
   color: @light-brown;
 }
 
+.footer__trademark {
+  text-align: center;
+}
+
+.footer__paragraph {
+  text-align: justify;
+}
+
 .footer__input {
   border: 1px solid #c4b7b1;
   border-radius: 1px;
+  width: 280px;
+  box-sizing: border-box;
+  padding: 5px;
 }
 
 .footer__input::placeholder {
@@ -46,6 +69,12 @@
   font-family: @calibri;
   color: @light-brown;
   text-decoration: none;
+}
+
+.footer__link {
+  display: inline-block;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #bfb6af;
 }
 
 .footer__socials {

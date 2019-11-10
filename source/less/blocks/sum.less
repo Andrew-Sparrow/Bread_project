@@ -1,12 +1,18 @@
 .sum {
+  position: relative;
   width: 100px;
   display: flex;
+  font-size: 22px;
   color: @red-brown;
   font-weight: 700;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
+  margin-left: 40px;
 }
 
 .sum::before {
   content: url("../img/icon-cart.png");
   display: block;
+  position: absolute;
+  top: -4px;
+  left: -40px;
 }
