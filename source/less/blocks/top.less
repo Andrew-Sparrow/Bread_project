@@ -1,5 +1,5 @@
 .top {
-  width: @phone-container;
+  width: 0;
   margin: 0 auto;
   font-family: @calibri;
   color: @light-brown;
@@ -7,6 +7,15 @@
   font-weight: 400;
   margin-bottom: 15px;
   border-bottom: 2px solid #dcd2c8;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f5f2ec;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
 }
 
 .top__account,
