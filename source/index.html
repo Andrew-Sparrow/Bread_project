@@ -39,18 +39,20 @@
         </a>
       </li>
     </ul>
-    <address class="top__address">Город: <span class="top__city">Москва</span></address>
-    <div class="top__account">Личный кабинет</div>
+    <address class="top__address">Город: <button class="top__city" type="button">Москва</button></address>
+    <a class="top__account" href="#">Личный кабинет</a>
   </div>
   <div class="middle">
-    <div class="logo">
-      <button class="openbtn" onclick="openNav()">
+    <div class="middle__box">
+      <div class="logo">
+        <img class="logo__img" src="img/logo-text.png" width="186" height="26" alt="Логотип Хлебомолы">
+        <p class="logo__description">
+          Технологии правильного питания
+        </p>
+      </div>
+      <button class="openbtn" type="button" onclick="openNav()">
         ☰
       </button>
-      <img class="logo__img" src="img/logo-text.png" width="186" height="26" alt="Логотип Хлебомолы">
-      <p class="logo__description">
-        Технологии правильного питания
-      </p>
     </div>
     <input class="middle__search" type="search" placeholder="Найти что-нибудь">
     <div class="phone">
@@ -362,9 +364,9 @@
 <!--smth-->
 <script>
   function openNav() {
-    document.getElementById("top").style.width = "250px";
-    document.getElementById("bottom").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("top").style.width = "100%";
+    document.getElementById("bottom").style.width = "100%";
+    // document.getElementById("main").style.marginLeft = "250px";
   }
 
   function closeNav() {
