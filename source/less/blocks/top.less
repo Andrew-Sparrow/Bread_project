@@ -73,3 +73,22 @@
   top: 0;
   left: -30px;
 }
+
+@media (min-width: @table-container) {
+  .top {
+    display: flex;
+    position: initial;
+    width: @table-container;
+    background: none;
+    font-size: 14px;
+    flex-direction: column;
+    min-height: 135px;
+    padding-bottom: 40px;
+  }
+
+  .top__wrapper {
+    width: 172px;
+    align-self: flex-end;
+    margin-top: 30px;
+  }
+}

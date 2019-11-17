@@ -20,3 +20,18 @@
 .about__item {
   margin-bottom: 7px;
 }
+
+@media (min-width: @table-container) {
+  .about {
+    width: @table-container;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #d5ccc1;
+  }
+
+  .about__link {
+    margin-left: 0;
+  }
+}

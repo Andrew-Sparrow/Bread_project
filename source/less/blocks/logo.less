@@ -18,15 +18,27 @@
 }
 
 .logo__description {
-  width: 186px;
+  width: 190px;
   color: #5e3919;
   margin-top: 0;
   margin-bottom: 0;
   font-size: 13px;
+  font-weight: 700;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
 
 .logo__img {
   margin-bottom: -4px;
+}
+
+@media (min-width: @table-container) {
+  .logo {
+    margin-left: 70px;
+  }
+
+  .logo::before {
+    display: block;
+    left: -70px;
+  }
 }

@@ -30,3 +30,23 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media (min-width: @table-container) {
+  .middle {
+    width: @table-container;
+    display: flex;
+    align-items: baseline;
+    justify-content: initial;
+    order: initial;
+    margin-top: -155px;
+  }
+
+  .middle__search {
+    width: 200px;
+    margin-bottom: 6px;
+  }
+
+  .middle__box {
+    margin-right: 45px;
+  }
+}
