@@ -7,7 +7,10 @@
 }
 
 .order__header {
-  margin-left: 10px;
+  width: 250px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  margin-left: 14px;
   font-family: "Georgia", sans-serif;
   font-weight: 400;
   font-style: italic;
@@ -19,6 +22,7 @@
 
 .order__table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
 }
 
@@ -30,23 +34,34 @@
 
 .order__name {
   width: 180px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
   font-size: 16px;
   color: @light-brown;
 }
 
 .order__price {
+  width: 55px;
   padding: 7px;
   color: @red-brown;
   font-size: 16px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .order__calculated {
   font-size: 18px;
   color: @red-brown;
+  width: 180px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .order__total {
+  width: 55px;
   font-weight: 700;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .order__discount {
