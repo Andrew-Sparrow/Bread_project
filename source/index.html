@@ -9,32 +9,32 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-<header class="header">
+<header class="header" id="header">
+  <a href="javascript:void(0)" class="closebtn" id="closebtn" onclick="closeNav()">×</a>
   <div class="top" id="top">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <ul class="about">
       <li class="about__item">
-        <a class="about__link" href="#">
+        <a class="about__link about__link--shop" href="#">
           О магазине
         </a>
       </li>
       <li class="about__item">
-        <a class="about__link" href="#">
+        <a class="about__link about__link--delivery" href="#">
           Доставка и самовывоз
         </a>
       </li>
       <li class="about__item">
-        <a class="about__link" href="#">
+        <a class="about__link about__link--pay" href="#">
           Оплата
         </a>
       </li>
       <li class="about__item">
-        <a class="about__link" href="#">
+        <a class="about__link about__link--contacts" href="#">
           Контакты
         </a>
       </li>
       <li class="about__item">
-        <a class="about__link"  href="#">
+        <a class="about__link about__link--blog" href="#">
           Блог
         </a>
       </li>
@@ -52,9 +52,6 @@
           Технологии правильного питания
         </p>
       </div>
-      <button class="openbtn" type="button" onclick="openNav()">
-        ☰
-      </button>
     </div>
     <div class="middle__wrapper">
       <input class="middle__search" type="search" placeholder="Найти что-нибудь">
@@ -108,6 +105,9 @@
   </div>
 </header>
 <main class="main" id="main">
+  <button class="openbtn" id="openbtn" type="button" href="javascript:void(0)" onclick="openNav()">
+    ☰
+  </button>
   <section class="order">
     <h3 class="order__header">Ваш заказ</h3>
     <table class="order__table">
@@ -314,10 +314,10 @@
             +7 (800) 555 33 86 — вся Россия
             </li>
           <li class="footer__item">
-            <a class="footer__link" href="#">Обратная связь</a>
+            <a class="footer__link footer__link--callback" href="#">Обратная связь</a>
           </li>
           <li class="footer__item">
-            <a class="footer__link" href="#">info@hlebomoli.ru</a>
+            <a class="footer__link footer__link--email" href="#">info@hlebomoli.ru</a>
           </li>
         </ul>
       </div>
@@ -362,14 +362,17 @@
 <!--smth-->
 <script>
   function openNav() {
-    document.getElementById("top").style.width = "250px";
-    document.getElementById("bottom").style.width = "250px";
+    // document.getElementById("top").style.width = "250px";
+    // document.getElementById("bottom").style.width = "250px";
+    // document.getElementById("closebtn").style.display = "block";
+    document.getElementById("header").style.width = "280px";
   }
 
   function closeNav() {
-    document.getElementById("top").style.width = "0";
-    document.getElementById("bottom").style.width = "0";
-    document.getElementById("main").style.marginLeft= "auto";
+    // document.getElementById("top").style.width = "0";
+    // document.getElementById("bottom").style.width = "0";
+    // document.getElementById("main").style.marginLeft= "auto";
+    document.getElementById("header").style.width = "0";
   }
 </script>
 

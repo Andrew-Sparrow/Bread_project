@@ -1,10 +1,8 @@
 .technics {
-  width: 220px;
+  width: 200px;
   list-style: none;
   padding-left: 0;
-  margin-top: 20px;
   margin-bottom: 25px;
-  margin-left: 40px;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -22,4 +20,17 @@
   display: inline-block;
   color: @brown;
   transition: 0.3s;
+}
+
+@media (min-width: @table-container) {
+  .technics {
+    width: @table-container;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+  }
+
+  .technics__link {
+    font-size: 14px;
+  }
 }

@@ -1,8 +1,6 @@
 .bottom {
-  position: fixed;
-  width: 0;
+  width: 200px;
   margin: 0 auto;
-  margin-top: -40px;
   color: @brown;
   height: 100%;
   z-index: 1;
@@ -13,4 +11,13 @@
   transition: 0.5s;
   padding-top: 0;
   box-sizing: border-box;
+}
+
+@media (min-width: @table-container) {
+  .bottom {
+    width: @table-container;
+    position: initial;
+    background: none;
+    margin: 30px auto 0;
+  }
 }

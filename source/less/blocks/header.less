@@ -1,6 +1,18 @@
 .header {
-  display: flex;
+  position: fixed;
+  max-height: 536px;
+  width: 0;
+  right: 0;
   flex-direction: column;
   background-color: #f7f3ee;
-  background-image: url("../img/bg-top.png");
+  transition: 0.5s;
+  z-index: 100;
+  overflow-y: scroll;
+}
+
+@media (min-width: @table-container) {
+  .header {
+    width: 100%;
+    background-image: url("../img/bg-top.png");
+  }
 }
