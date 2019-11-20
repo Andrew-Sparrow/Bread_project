@@ -25,3 +25,16 @@
 .tab__entity {
   border: 1px dashed #d15b0a;
 }
+
+@media (min-width: @tablet-container) {
+  .tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .tab__individual,
+  .tab__entity {
+    text-align: center;
+  }
+}

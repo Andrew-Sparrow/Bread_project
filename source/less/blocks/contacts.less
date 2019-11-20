@@ -17,6 +17,11 @@
   margin-bottom: 5px;
 }
 
+.contacts__list {
+  list-style: none;
+  padding-left: 0;
+}
+
 .contacts__phone,
 .contacts__email,
 .contacts__surname,
@@ -27,4 +32,13 @@
   margin-bottom: 15px;
   padding: 5px;
   box-sizing: border-box;
+}
+
+@media (min-width: @tablet-width) {
+  .contacts__phone,
+  .contacts__email,
+  .contacts__surname,
+  .contacts__name {
+    font-size: 20px;
+  }
 }
