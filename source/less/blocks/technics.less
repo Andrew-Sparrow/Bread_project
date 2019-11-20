@@ -22,15 +22,20 @@
   transition: 0.3s;
 }
 
-@media (min-width: @table-container) {
+@media (min-width: @tablet-container) {
   .technics {
-    width: @table-container;
+    width: 500px;
     display: flex;
-    justify-content: space-between;
     margin-left: 0;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
   }
 
   .technics__link {
     font-size: 14px;
+  }
+
+  .technics__item:nth-child(odd) {
+    width: 304px;
   }
 }

@@ -70,11 +70,11 @@
   left: -30px;
 }
 
-@media (min-width: @table-container) {
+@media (min-width: @tablet-container) {
   .top {
     display: flex;
     position: initial;
-    width: @table-container;
+    width: @tablet-container;
     background: none;
     font-size: 14px;
     flex-direction: column;
@@ -83,8 +83,12 @@
   }
 
   .top__wrapper {
-    width: 172px;
+    width: 134px;
     align-self: flex-end;
     margin-top: 30px;
+  }
+
+  .top__account {
+    width: 101px;
   }
 }
