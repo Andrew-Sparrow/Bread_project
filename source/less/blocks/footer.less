@@ -107,3 +107,50 @@
 .footer__link--email {
   width: 125px;
 }
+
+@media (min-width: @tablet-width) {
+  .footer__container {
+    width: @tablet-container;
+  }
+
+  .footer__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer__bottom {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    border-top: 2px solid @carrot;
+    align-items: center;
+    min-height: 80px;
+  }
+
+  .footer__bottom::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 2px solid #edeae3;
+    top: -7%;
+    left: 50%;
+    background-color: @carrot;
+    box-sizing: border-box;
+  }
+
+  .footer__trademark {
+    width: 180px;
+    margin: 0;
+  }
+
+  .footer__socials {
+    width: 280px;
+    margin: 0;
+    padding-bottom: 0;
+    justify-content: space-between;
+  }
+}

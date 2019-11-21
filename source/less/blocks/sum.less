@@ -17,10 +17,24 @@
   left: -40px;
 }
 
+.sum::after {
+  content: "2";
+  position: absolute;
+  top: -5%;
+  left: -18%;
+  color: #fff;
+  font-size: 16px;
+}
+
 @media (min-width: @tablet-container) {
   .sum {
     width: 71px;
     font-size: 18px;
     margin-left: 107px;
+  }
+
+  .sum::after {
+    top: -6%;
+    left: -26%;
   }
 }

@@ -43,3 +43,25 @@
   border: 1px solid #c4b7b1;
   border-radius: 2px;
 }
+
+.address__list {
+  list-style: none;
+  padding-left: 0;
+}
+
+@media (min-width: @tablet-width) {
+  .address__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .address__country {
+    width: 280px;
+    box-sizing: border-box;
+  }
+
+  .address__title {
+    width: 290px;
+  }
+}

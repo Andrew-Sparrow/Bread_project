@@ -5,7 +5,8 @@
   <title>Хлебомолы</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <link rel="preload" href="fonts/colgatereadycyrillic.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/Philosopher-Bold.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/Philosopher-Bold.woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
@@ -197,13 +198,19 @@
       </div>
       <div class="address">
         <h2 class="address__title">Адрес и способ доставки</h2>
-        <label class="address__label" for="country">Страна</label>
-        <select class="address__country" type="" id="country">
-          <option value="Russia">Россия</option>
-          <option value="Germany">Германия</option>
-        </select>
-        <label class="address__label" for="city">Город</label>
-        <input class="address__city" id="city">
+        <ul class="address__list">
+          <li class="address__item">
+            <label class="address__label" for="country">Страна</label>
+            <select class="address__country" type="" id="country">
+              <option value="Russia">Россия</option>
+              <option value="Germany">Никарагуа</option>
+            </select>
+          </li>
+          <li>
+            <label class="address__label" for="city">Город</label>
+            <input class="address__city" id="city">
+          </li>
+        </ul>
       </div>
       <div class="delivery">
         <h3 class="delivery__title">
@@ -213,7 +220,9 @@
           <li class="delivery__item">
             <input class="delivery__radio" type="radio" name="delivery-option" id="radio-courier">
             <label class="delivery__label" for="radio-courier">
-              Доставка курьерской службой — 710 ₽
+              <span class="delivery__text">
+                Доставка курьерской службой — 710 ₽
+              </span>
               <span class="delivery__notice">
                 (Срок доставки — 1–3 дня)
               </span>
@@ -222,7 +231,9 @@
           <li class="delivery__item">
             <input class="delivery__radio" type="radio" name="delivery-option" id="radio-transport">
             <label class="delivery__label" for="radio-transport">
-              Доставка транспортной компанией — 210 ₽
+              <span class="delivery__text">
+                Доставка транспортной компанией — 210 ₽
+              </span>
               <span class="delivery__notice">
                 Данный вид доставки возможен при полной
                 предоплате заказа. Срок доставки — 3–5 дней)
@@ -232,7 +243,9 @@
           <li class="delivery__item">
             <input class="delivery__radio" type="radio" name="delivery-option" id="radio-pickup" checked>
             <label class="delivery__label" for="radio-pickup">
-              Самовывоз — 180 ₽
+              <span class="delivery__text">
+                Самовывоз — 180 ₽
+              </span>
               <span class="delivery__notice">
                 Доставка до пункта самовывоза займет 2–3 дня
               </span>
