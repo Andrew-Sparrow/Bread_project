@@ -92,3 +92,29 @@
     width: 101px;
   }
 }
+
+@media (min-width: @desktop-width) {
+  .top {
+    width: @desktop-content;
+    flex-direction: initial;
+    min-height: initial;
+    justify-content: space-between;
+    padding-bottom: 0;
+  }
+
+  .top__wrapper {
+    display: flex;
+    width: 255px;
+    margin-top: 0;
+    justify-content: space-between;
+  }
+
+  .top__account {
+    width: 145px;
+  }
+
+  .top__address::before,
+  .top__account::before {
+    left: -22px;
+  }
+}

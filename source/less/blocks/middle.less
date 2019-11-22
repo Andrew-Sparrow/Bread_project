@@ -35,9 +35,9 @@
     width: @tablet-container;
     display: flex;
     align-items: baseline;
-    justify-content: initial;
     order: initial;
     margin-top: -137px;
+    justify-content: space-between;
   }
 
   .middle__search {
@@ -47,5 +47,20 @@
 
   .middle__box {
     margin-right: 45px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .middle {
+    width: @desktop-content;
+    margin-top: 0;
+    border-bottom: 2px solid #dcd2c8;
+  }
+
+  .middle__wrapper {
+    width: 545px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
   }
 }

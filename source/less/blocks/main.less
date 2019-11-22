@@ -1,12 +1,13 @@
 .main {
   padding-top: 10px;
   margin: 0 auto;
+  background-image: url("../img/top-pattern.png");
+  background-repeat: no-repeat;
 }
 
 .main__container {
   width: @phone-container;
   margin: 0 auto;
-  background-image: url("../img/top-pattern.png");
 }
 
 .main__button {
@@ -33,10 +34,11 @@
 
 @media (min-width: @tablet-width) {
   .main {
-    width: @tablet-width;
+    width: @tablet-container;
     position: relative;
     z-index: 200;
     margin-top: -17px;
+    padding-top: 0;
   }
 
   .main__container {
@@ -47,5 +49,19 @@
 
   .main__button {
     margin-left: auto;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .main {
+    width: @desktop-width;
+    background-color: #fcfaf5;
+  }
+
+  .main__container {
+    width: @desktop-content;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
   }
 }
