@@ -154,3 +154,23 @@
     justify-content: space-between;
   }
 }
+
+@media (min-width: @desktop-width) {
+  .footer__list,
+  .footer__info,
+  .footer__catalog {
+    display: initial;
+  }
+
+  .footer__container {
+    width: @desktop-content;
+  }
+
+  .footer__paragraph {
+    font-size: 13px;
+  }
+
+  .footer__list--left .footer__link {
+    width: 82px;
+  }
+}

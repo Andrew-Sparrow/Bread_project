@@ -34,6 +34,15 @@
   box-sizing: border-box;
 }
 
+.contacts__phone::placeholder,
+.contacts__email::placeholder,
+.contacts__surname::placeholder,
+.contacts__name::placeholder {
+  color: #817068;
+  font-size: 16px;
+  font-family: @calibri;
+}
+
 @media (min-width: @tablet-width) {
   .contacts__phone,
   .contacts__email,
@@ -53,5 +62,16 @@
 @media (min-width: @desktop-width) {
   .contacts__list {
     width: 390px;
+  }
+
+  .contacts__email,
+  .contacts__name,
+  .contacts__surname,
+  .contacts__label {
+    width: 185px;
+  }
+
+  .contacts__phone {
+    width: 160px;
   }
 }
