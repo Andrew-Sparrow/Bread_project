@@ -71,9 +71,13 @@
   height: 12px;
   background: #ff6900;
   position: absolute;
-  top: 26%;
+  top: 15%;
   left: -25.5px;
   border-radius: 100%;
+}
+
+.delivery__radio:checked + .delivery__label--pickup .delivery__text::after {
+  top: 26%;
 }
 
 .delivery__notice {

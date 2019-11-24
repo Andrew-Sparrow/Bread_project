@@ -1,6 +1,6 @@
 .header {
   position: fixed;
-  max-height: 536px;
+  min-height: 536px;
   width: 0;
   right: 0;
   flex-direction: column;
@@ -13,7 +13,14 @@
 @media (min-width: @tablet-width) {
   .header {
     width: 100%;
+    min-height: 365px;
     position: relative;
     background-image: url("../img/bg-top.png");
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .header {
+    background-image: url("../img/bg-header-lines.png");
   }
 }
