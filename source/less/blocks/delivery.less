@@ -91,11 +91,35 @@
   .delivery__label {
     width: @tablet-container;
   }
+
+  .delivery__radio:checked + .delivery__label .delivery__text::after {
+    top: 23%;
+  }
+
+  .delivery__radio:checked + .delivery__label--pickup .delivery__text::after {
+    top: 24%;
+  }
 }
 
 
 @media (min-width: @desktop-width) {
   .delivery__label {
     width: 390px;
+  }
+
+  .delivery__radio:checked + .delivery__label .delivery__text::after {
+    top: 24%;
+  }
+
+  .delivery__radio:checked + .delivery__label--pickup .delivery__text::after {
+    top: 26%;
+  }
+
+  .delivery__notice {
+    font-size: 13px;
+  }
+
+  .delivery__prepayment {
+    width: 263px;
   }
 }

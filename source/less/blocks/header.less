@@ -1,6 +1,7 @@
 .header {
   position: fixed;
   min-height: 536px;
+  max-height: 201px;
   width: 0;
   right: 0;
   flex-direction: column;
@@ -14,6 +15,7 @@
   .header {
     width: 100%;
     min-height: 365px;
+    max-height: initial;
     position: relative;
     background-image: url("../img/bg-top.png");
   }
@@ -22,5 +24,7 @@
 @media (min-width: @desktop-width) {
   .header {
     background-image: url("../img/bg-header-lines.png");
+    min-height: 580px;
+    overflow-y: auto;
   }
 }

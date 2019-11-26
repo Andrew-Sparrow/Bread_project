@@ -172,104 +172,111 @@
     <section class="formalization">
       <h1 class="formalization__header">Оформление заказа</h1>
       <div class="tab">
-        <a class="tab__individual">Физическое лицо</a>
-        <a class="tab__entity">Юридическое лицо</a>
+        <button class="tab__button tab__individual" onclick="openStatus(event, 'individual')" id="defaultOpen">Физическое лицо</button>
+        <button class="tab__button tab__entity" onclick="openStatus(event, 'entity')">Юридическое лицо</button>
       </div>
-      <div class="contacts">
-        <h2 class="contacts__title">Контактные данные</h2>
-        <ul class="contacts__list">
-          <li class="contacts__item">
-            <label class="contacts__label" for="name">Имя</label>
-            <input class="contacts__name" id="name" placeholder="Александр">
-          </li>
-          <li class="contacts__item">
-            <label class="contacts__label" for="surname">Фамилия</label>
-            <input class="contacts__surname" id="surname" placeholder="Пушкин">
-          </li>
-          <li class="contacts__item">
-            <label class="contacts__label" for="email">Эл.почта</label>
-            <input class="contacts__email" id="email" placeholder="mail@mail.com">
-          </li>
-          <li class="contacts__item">
-            <label class="contacts__label" for="phone">Номер телефона</label>
-            <input class="contacts__phone" id="phone" placeholder="999 432 34-21">
-          </li>
-        </ul>
-      </div>
-      <div class="address">
-        <h2 class="address__title">Адрес и способ доставки</h2>
-        <ul class="address__list">
-          <li class="address__item">
-            <label class="address__label" for="country">Страна</label>
-            <select class="address__country" type="" id="country">
-              <option value="Russia">Россия</option>
-              <option value="Germany">Никарагуа</option>
-            </select>
-          </li>
-          <li>
-            <label class="address__label" for="city">Город</label>
-            <input class="address__city" id="city">
-          </li>
-        </ul>
-      </div>
-      <div class="delivery">
-        <h3 class="delivery__title">
-          Способ доставки
-        </h3>
-        <ul class="delivery__options">
-          <li class="delivery__item">
-            <input class="delivery__radio" type="radio" name="delivery-option" id="radio-courier">
-            <label class="delivery__label delivery__label--courier" for="radio-courier">
+      <div class="formalization__content formalization__individual" id="individual">
+        <div class="contacts">
+          <h2 class="contacts__title">Контактные данные</h2>
+          <ul class="contacts__list">
+            <li class="contacts__item">
+              <label class="contacts__label" for="name">Имя</label>
+              <input class="contacts__name" id="name" placeholder="Александр">
+            </li>
+            <li class="contacts__item">
+              <label class="contacts__label" for="surname">Фамилия</label>
+              <input class="contacts__surname" id="surname" placeholder="Пушкин">
+            </li>
+            <li class="contacts__item">
+              <label class="contacts__label" for="email">Эл.почта</label>
+              <input class="contacts__email" id="email" placeholder="mail@mail.com">
+            </li>
+            <li class="contacts__item">
+              <label class="contacts__label" for="phone">Номер телефона</label>
+              <input class="contacts__phone" id="phone" placeholder="999 432 34-21">
+            </li>
+          </ul>
+        </div>
+        <div class="address">
+          <h2 class="address__title">Адрес и способ доставки</h2>
+          <ul class="address__list">
+            <li class="address__item">
+              <label class="address__label" for="country">Страна</label>
+              <select class="address__country" type="" id="country">
+                <option value="Russia">Россия</option>
+                <option value="Germany">Никарагуа</option>
+              </select>
+            </li>
+            <li>
+              <label class="address__label" for="city">Город</label>
+              <input class="address__city" id="city">
+            </li>
+          </ul>
+        </div>
+        <div class="delivery">
+          <h3 class="delivery__title">
+            Способ доставки
+          </h3>
+          <ul class="delivery__options">
+            <li class="delivery__item">
+              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-courier" onclick="show()">
+              <label class="delivery__label delivery__label--courier" for="radio-courier">
               <span class="delivery__text">
                 Доставка курьерской службой — 710 ₽
               </span>
-              <span class="delivery__notice">
+                <span class="delivery__notice">
                 (Срок доставки — 1–3 дня)
               </span>
-            </label>
-          </li>
-          <li class="delivery__item">
-            <input class="delivery__radio" type="radio" name="delivery-option" id="radio-transport">
-            <label class="delivery__label" for="radio-transport">
+              </label>
+            </li>
+            <li class="delivery__item">
+              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-transport" onclick="show()">
+              <label class="delivery__label" for="radio-transport">
               <span class="delivery__text">
                 Доставка транспортной компанией — 210 ₽
               </span>
-              <span class="delivery__notice delivery__prepayment">
+                <span class="delivery__notice delivery__prepayment">
                 (Данный вид доставки возможен при полной
                 предоплате заказа. Срок доставки — 3–5 дней)
               </span>
-            </label>
-          </li>
-          <li class="delivery__item">
-            <input class="delivery__radio" type="radio" name="delivery-option" id="radio-pickup" checked>
-            <label class="delivery__label delivery__label--pickup" for="radio-pickup">
+              </label>
+            </li>
+            <li class="delivery__item">
+              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-pickup" checked onclick="notShow()">
+              <label class="delivery__label delivery__label--pickup" for="radio-pickup">
               <span class="delivery__text">
                 Самовывоз — 180 ₽
               </span>
-              <span class="delivery__notice">
+                <span class="delivery__notice">
                 Доставка до пункта самовывоза займет 2–3 дня
               </span>
-            </label>
-          </li>
-        </ul>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="point" id="pickup-block">
+          <h3 class="point__title">
+            Пункт самовывоза
+          </h3>
+          <label class="point__label" for="point">
+            Станция метро
+          </label>
+          <select class="point__select" id="point"  onchange="showDiv('hidden_div', this)">
+            <option class="point__option" value="0">Кузнецкий мост</option>
+            <option class="point__option" value="1">Говорово</option>
+            <option class="point__option" value="2">Киевская</option>
+          </select>
+          <iframe class="point__map" src="https://yandex.ru/map-widget/v1/-/CGwTnAmA" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>
+          <div class="point__address" id="hidden_div">This is a hidden div</div>
+        </div>
+        <div class="comment">
+          <h3 class="comment__header">Комментарий к заказу</h3>
+          <textarea class="comment__textarea" rows="5" cols="38"></textarea>
+        </div>
       </div>
-      <div class="point">
-        <h3 class="point__title">
-          Пункт самовывоза
-        </h3>
-        <label class="point__label" for="point">
-          Станция метро
-        </label>
-        <select class="point__select" id="point">
-          <option class="point__option">Кузнецкий мост</option>
-          <option class="point__option">Говорово</option>
-          <option class="point__option">Киевская</option>
-        </select>
-        <iframe class="point__map" src="https://yandex.ru/map-widget/v1/-/CGwTnAmA" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>
-      </div>
-      <div class="comment">
-        <h3 class="comment__header">Комментарий к заказу</h3>
-        <textarea class="comment__textarea" rows="5" cols="38"></textarea>
+      <div class="formalization__content formalization__entity" id="entity">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
       </div>
       <a class="main__button">К выбору способа оплаты</a>
     </section>
@@ -385,20 +392,54 @@
     </section>
   </div>
 </footer>
-<!--smth-->
+
 <script>
   function openNav() {
-    // document.getElementById("top").style.width = "250px";
-    // document.getElementById("bottom").style.width = "250px";
-    // document.getElementById("closebtn").style.display = "block";
     document.getElementById("header").style.width = "280px";
   }
 
   function closeNav() {
-    // document.getElementById("top").style.width = "0";
-    // document.getElementById("bottom").style.width = "0";
-    // document.getElementById("main").style.marginLeft= "auto";
     document.getElementById("header").style.width = "0";
+  }
+
+  function openStatus(evt, status) {
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="formalization__content" and hide them
+    tabcontent = document.getElementsByClassName("formalization__content");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tab__button" and remove the class "active"
+    tablinks = document.getElementsByClassName("tab__button");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" tab__active", "");
+    }
+
+  // Show the current tab, and add an "tab__active" class to the button that opened the tab
+    document.getElementById(status).style.display = "block";
+    evt.currentTarget.className += " tab__active";
+  }
+
+  //Press button by default
+  document.getElementById("defaultOpen").click();
+
+  //Show the map if appropriate radio checked
+  function show(){
+    document.getElementById('pickup-block').style.display ='none';
+  }
+
+  //Hide the map if appropriate radio checked
+  function notShow(){
+    document.getElementById('pickup-block').style.display = 'block';
+  }
+
+  //Press radio by default
+  document.getElementById("radio-pickup").click();
+
+  function showDiv(divId, element) {
+    document.getElementById(divId).style.display = element.value == 0 ? 'block' : 'none';
   }
 </script>
 

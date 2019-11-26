@@ -1,3 +1,7 @@
+.point {
+  display: none;
+}
+
 .point__title {
   width: 250px;
   overflow-wrap: break-word;
@@ -36,6 +40,12 @@
   border: none;
 }
 
+.point__address {
+  display: none;
+  color: red;
+  font-size: 40px;
+  font-weight: 700;
+}
 
 @media (min-width: @tablet-width) {
   .point__map {
@@ -48,11 +58,7 @@
     width: 246px;
   }
 
-  .delivery__notice {
-    font-size: 13px;
-  }
-
-  .delivery__prepayment {
-    width: 263px;
+  .point__map {
+    width: 390px;
   }
 }
