@@ -8,6 +8,8 @@
   <link rel="preload" href="fonts/Philosopher-Bold.woff" as="font" crossorigin="anonymous">
   <link rel="preload" href="/fonts/Philosopher-Bold.woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.min.css">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=48899678-efd3-4d04-8fc5-f983050ddd12&lang=ru_RU" type="text/javascript">
+  </script>
 </head>
 <body>
 <header class="header" id="header">
@@ -261,13 +263,15 @@
           <label class="point__label" for="point">
             Станция метро
           </label>
-          <select class="point__select" id="point"  onchange="showDiv('hidden_div', this)">
-            <option class="point__option" value="0">Кузнецкий мост</option>
-            <option class="point__option" value="1">Говорово</option>
-            <option class="point__option" value="2">Киевская</option>
+          <select class="point__select" id="point" onchange="showDiv(this)">
+            <option class="point__option" value="0" selected>Кузнецкий мост</option>
+            <option class="point__option" value="1">Калужская</option>
           </select>
-          <iframe class="point__map" src="https://yandex.ru/map-widget/v1/-/CGwTnAmA" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>
-          <div class="point__address" id="hidden_div">This is a hidden div</div>
+<!--          <iframe class="point__map" src="https://yandex.ru/map-widget/v1/-/CGwTnAmA" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>-->
+<!--          <iframe class="point__map" id="map" src="https://yandex.ru/map-widget/v1/-/CGdYu66F" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>-->
+          <div class="point__map" id="map"></div>
+          <div class="point__address point__default" id="hidden_div0">Кузнецкий мост</div>
+          <div class="point__address" id="hidden_div1">Калужская</div>
         </div>
         <div class="comment">
           <h3 class="comment__header">Комментарий к заказу</h3>
@@ -411,7 +415,7 @@
       tabcontent[i].style.display = "none";
     }
 
-    // Get all elements with class="tab__button" and remove the class "active"
+    // Get all elements with class="tab__button" and remove the class "tab__active"
     tablinks = document.getElementsByClassName("tab__button");
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" tab__active", "");
@@ -438,8 +442,71 @@
   //Press radio by default
   document.getElementById("radio-pickup").click();
 
-  function showDiv(divId, element) {
-    document.getElementById(divId).style.display = element.value == 0 ? 'block' : 'none';
+  function showDiv(element) {
+    let pointAddress = document.getElementsByClassName("point__address");
+    switch (+element.value) {
+      case 0:
+        for (i = 0; i < pointAddress.length; i++) {
+          pointAddress[i].style.display = "none";
+        }
+        document.getElementById('hidden_div0').style.display = 'block';
+        myMap.setCenter([55.761345, 37.621936], 16);
+        break;
+      case 1:
+        for (i = 0; i < pointAddress.length; i++) {
+          pointAddress[i].style.display = "none";
+        }
+        document.getElementById('hidden_div1').style.display = 'block';
+        myMap.setCenter([55.648214, 37.540847], 13);
+        break;
+    }
+  }
+
+  ymaps.ready(init);
+
+  var myMap = {};
+
+  function init(){
+      // Создание карты.
+      myMap = new ymaps.Map('map', {
+        center: [55.761345, 37.621936],
+        zoom: 16,
+        controls: []
+      }, {
+        searchControlProvider: 'yandex#search'
+      }),
+      myPlacemarkKuz = new ymaps.Placemark([55.762054, 37.620851], {
+        hintContent: 'Хлебомолы'
+      }, {
+        // Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'img/mark.png',
+        // Размеры метки.
+        iconImageSize: [30, 42],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-5, -38]
+      }),
+        myPlacemarkBut = new ymaps.Placemark([55.648214, 37.540847], {
+          hintContent: 'Хлебомолы'
+        }, {
+          // Опции.
+          // Необходимо указать данный тип макета.
+          iconLayout: 'default#image',
+          // Своё изображение иконки метки.
+          iconImageHref: 'img/mark.png',
+          // Размеры метки.
+          iconImageSize: [30, 42],
+          // Смещение левого верхнего угла иконки относительно
+          // её "ножки" (точки привязки).
+          iconImageOffset: [-5, -38]
+        });
+
+    myMap.geoObjects
+      .add(myPlacemarkKuz)
+      .add(myPlacemarkBut);
   }
 </script>
 
