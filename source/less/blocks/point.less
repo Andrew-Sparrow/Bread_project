@@ -1,5 +1,6 @@
 .point {
   display: none;
+  position: relative;
 }
 
 .point__title {
@@ -38,13 +39,26 @@
   width: 280px;
   height: 280px;
   border: none;
+  box-shadow: 1px 15px 21px -9px #d6d0b7;
 }
 
 .point__address {
+  width: 390px;
+  min-height: 140px;
   display: none;
-  color: red;
-  font-size: 40px;
-  font-weight: 700;
+  box-sizing: border-box;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 78px;
+  padding-bottom: 24px;
+  position: absolute;
+  font-size: 16px;
+  line-height: 22px;
+  color: #461f02;
+  font-weight: 400;
+  z-index: 2000;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(253, 252, 250, 0), rgb(253, 252, 250) 54%);
 }
 
 .point__default {

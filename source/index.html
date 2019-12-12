@@ -267,10 +267,9 @@
             <option class="point__option" value="0" selected>Кузнецкий мост</option>
             <option class="point__option" value="1">Калужская</option>
           </select>
-<!--          <iframe class="point__map" src="https://yandex.ru/map-widget/v1/-/CGwTnAmA" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>-->
-<!--          <iframe class="point__map" id="map" src="https://yandex.ru/map-widget/v1/-/CGdYu66F" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>-->
           <div class="point__map" id="map"></div>
-          <div class="point__address point__default" id="hidden_div0">Кузнецкий мост</div>
+          <div class="point__address point__default" id="hidden_div0">Ул. Кузнецкий мост, 9/10 стр.2, офис 204 Ежедневно&nbspс&nbsp12:00&nbspдо&nbsp22:00
+          </div>
           <div class="point__address" id="hidden_div1">Калужская</div>
         </div>
         <div class="comment">
@@ -457,7 +456,7 @@
           pointAddress[i].style.display = "none";
         }
         document.getElementById('hidden_div1').style.display = 'block';
-        myMap.setCenter([55.648214, 37.540847], 13);
+        myMap.setCenter([55.647252, 37.541977], 15);
         break;
     }
   }
@@ -474,7 +473,7 @@
         controls: []
       }, {
         searchControlProvider: 'yandex#search'
-      }),
+      });
       myPlacemarkKuz = new ymaps.Placemark([55.762054, 37.620851], {
         hintContent: 'Хлебомолы'
       }, {
@@ -488,7 +487,7 @@
         // Смещение левого верхнего угла иконки относительно
         // её "ножки" (точки привязки).
         iconImageOffset: [-5, -38]
-      }),
+      });
         myPlacemarkBut = new ymaps.Placemark([55.648214, 37.540847], {
           hintContent: 'Хлебомолы'
         }, {
