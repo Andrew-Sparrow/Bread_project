@@ -152,3 +152,15 @@ function changeDeliveryPrice(id) {
       break;
   }
 }
+
+function calculateGoods() {
+  let sumGoodsPrice = 0;
+
+  let listPrice = document.getElementsByClassName("order__price--number");
+
+  Array.prototype.forEach.call(listPrice, function (item) {
+    sumGoodsPrice += Number(item.innerHTML)
+  });
+
+  return sumGoodsPrice;
+}
