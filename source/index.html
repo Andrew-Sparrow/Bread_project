@@ -117,21 +117,15 @@
       <table class="order__table">
         <tr class="order__row">
           <td class="order__name">
-            Мельница ручная Kornkraft&nbspMia&nbspaMola
+            Мельница ручная Kornkraft&nbspMia&nbspaMola<span class="order-amount"></span>
           </td>
-          <td class="order__price">18 990 ₽</td>
+          <td class="order__price"><span class="order-price">18990</span> ₽</td>
         </tr>
         <tr class="order__row">
           <td class="order__name">
-            Пшеница БИО, 1 кг (Россия) (2 шт)
+            Пшеница БИО, 1 кг (Россия) (<span class="order-amount">2</span> шт)
           </td>
-          <td class="order__price">420 ₽</td>
-        </tr>
-        <tr class="order__row">
-          <td class="order__name">
-            Пшеница БИО, 1 кг (Россия) (2 шт)
-          </td>
-          <td class="order__price">420 ₽</td>
+          <td class="order__price"><span class="order-price">420</span> ₽</td>
         </tr>
         <tbody class="order__discount">
         <tr class="order__row">
@@ -139,7 +133,7 @@
             Размер скидки (5%)
           </td>
           <td class="order__price">
-            420 ₽
+            <span id="order-discount">420</span> ₽
           </td>
         </tr>
         <tr class="order__row">
@@ -147,15 +141,15 @@
             Итого
           </td>
           <td class="order__price">
-            18 344 ₽
+            <span id="order-sum">18344</span> ₽
           </td>
         </tr>
         <tr class="order__row">
-          <td class="order__name">
+          <td class="order__name" id="order-name">
             Самовывоз
           </td>
           <td class="order__price">
-            390 ₽
+            <span id="order-delivery-price">390</span> ₽
           </td>
         </tr>
         </tbody>
@@ -221,22 +215,24 @@
           </h3>
           <ul class="delivery__options">
             <li class="delivery__item">
-              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-courier" onclick="show()">
+              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-courier" value="courier" onclick="changeDeliveryPrice('delivery-courier-price');show();changeDelivery('delivery-courier');">
               <label class="delivery__label delivery__label--courier" for="radio-courier">
-              <span class="delivery__text">
-                Доставка курьерской службой — 710 ₽
+              <span class="delivery__text" id="delivery-courier">
+                Доставка курьерской службой
               </span>
+              — <span id="delivery-courier-price">710</span> ₽
                 <span class="delivery__notice">
                 (Срок доставки — 1–3 дня)
               </span>
               </label>
             </li>
             <li class="delivery__item">
-              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-transport" onclick="show()">
+              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-transport" value="transport" onclick="changeDeliveryPrice('delivery-transport-price');show();changeDelivery('delivery-transport');">
               <label class="delivery__label" for="radio-transport">
-              <span class="delivery__text">
-                Доставка транспортной компанией — 210 ₽
+              <span class="delivery__text" id="delivery-transport">
+                Доставка транспортной компанией
               </span>
+                — <span id="delivery-transport-price">210</span> ₽
                 <span class="delivery__notice delivery__prepayment">
                 (Данный вид доставки возможен при полной
                 предоплате заказа. Срок доставки — 3–5 дней)
@@ -244,11 +240,11 @@
               </label>
             </li>
             <li class="delivery__item">
-              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-pickup" checked onclick="notShow()">
+              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-pickup" value="pickup" checked onclick="changeDeliveryPrice('delivery-pickup-price');notShow();changeDelivery('delivery-pickup');">
               <label class="delivery__label delivery__label--pickup" for="radio-pickup">
-              <span class="delivery__text">
-                Самовывоз — 180 ₽
-              </span>
+              <span class="delivery__text" id="delivery-pickup">
+                Самовывоз
+              </span> — <span id="delivery-pickup-price">180</span> ₽
                 <span class="delivery__notice">
                 Доставка до пункта самовывоза займет 2–3 дня
               </span>
@@ -396,117 +392,7 @@
   </div>
 </footer>
 
-<script>
-  function openNav() {
-    document.getElementById("header").style.width = "280px";
-  }
-
-  function closeNav() {
-    document.getElementById("header").style.width = "0";
-  }
-
-  function openStatus(evt, status) {
-    var i, tabcontent, tablinks;
-
-    // Get all elements with class="formalization__content" and hide them
-    tabcontent = document.getElementsByClassName("formalization__content");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-
-    // Get all elements with class="tab__button" and remove the class "tab__active"
-    tablinks = document.getElementsByClassName("tab__button");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" tab__active", "");
-    }
-
-  // Show the current tab, and add an "tab__active" class to the button that opened the tab
-    document.getElementById(status).style.display = "block";
-    evt.currentTarget.className += " tab__active";
-  }
-
-  //Press button by default
-  document.getElementById("defaultOpen").click();
-
-  //Show the map if appropriate radio checked
-  function show(){
-    document.getElementById('pickup-block').style.display ='none';
-  }
-
-  //Hide the map if appropriate radio checked
-  function notShow(){
-    document.getElementById('pickup-block').style.display = 'block';
-  }
-
-  //Press radio by default
-  document.getElementById("radio-pickup").click();
-
-  function showDiv(element) {
-    let pointAddress = document.getElementsByClassName("point__address");
-    switch (+element.value) {
-      case 0:
-        for (i = 0; i < pointAddress.length; i++) {
-          pointAddress[i].style.display = "none";
-        }
-        document.getElementById('hidden_div0').style.display = 'block';
-        myMap.setCenter([55.761345, 37.621936], 16);
-        break;
-      case 1:
-        for (i = 0; i < pointAddress.length; i++) {
-          pointAddress[i].style.display = "none";
-        }
-        document.getElementById('hidden_div1').style.display = 'block';
-        myMap.setCenter([55.647252, 37.541977], 15);
-        break;
-    }
-  }
-
-  ymaps.ready(init);
-
-  var myMap = {};
-
-  function init(){
-      // Создание карты.
-      myMap = new ymaps.Map('map', {
-        center: [55.761345, 37.621936],
-        zoom: 16,
-        controls: []
-      }, {
-        searchControlProvider: 'yandex#search'
-      });
-      myPlacemarkKuz = new ymaps.Placemark([55.762054, 37.620851], {
-        hintContent: 'Хлебомолы'
-      }, {
-        // Опции.
-        // Необходимо указать данный тип макета.
-        iconLayout: 'default#image',
-        // Своё изображение иконки метки.
-        iconImageHref: 'img/mark.png',
-        // Размеры метки.
-        iconImageSize: [36, 45],
-        // Смещение левого верхнего угла иконки относительно
-        // её "ножки" (точки привязки).
-        iconImageOffset: [-5, -38]
-      });
-        myPlacemarkBut = new ymaps.Placemark([55.648214, 37.540847], {
-          hintContent: 'Хлебомолы'
-        }, {
-          // Опции.
-          // Необходимо указать данный тип макета.
-          iconLayout: 'default#image',
-          // Своё изображение иконки метки.
-          iconImageHref: 'img/mark.png',
-          // Размеры метки.
-          iconImageSize: [36, 45],
-          // Смещение левого верхнего угла иконки относительно
-          // её "ножки" (точки привязки).
-          iconImageOffset: [-5, -38]
-        });
-
-    myMap.geoObjects
-      .add(myPlacemarkKuz)
-      .add(myPlacemarkBut);
-  }
+<script src="js/script.js">
 </script>
 
 </body>

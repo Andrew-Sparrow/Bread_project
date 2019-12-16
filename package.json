@@ -1,5 +1,5 @@
 {
-  "name": "cat-energy-17",
+  "name": "bread",
   "version": "17.0.0",
   "private": true,
   "description": "Личный проект «Кэт энерджи» от HTML Academy",
@@ -24,9 +24,10 @@
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-optipng": "^7.0.0",
     "imagemin-svgo": "^7.0.0",
-    "posthtml-include": "^1.2.0",
-    "stylelint": "10.1.x",
     "merge": ">=1.2.1",
+    "posthtml-include": "^1.2.0",
+    "readable-stream": "^3.4.0",
+    "stylelint": "10.1.x",
     "stylelint-config-htmlacademy": "0.1.x"
   },
   "scripts": {

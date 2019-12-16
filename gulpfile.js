@@ -15,6 +15,7 @@ var webp =require("gulp-webp");
 var posthtml = require("gulp-posthtml");
 var del = require("del");
 var include = require("posthtml-include");
+var pipeline = require("readable-stream").pipeline;
 
 gulp.task("clean", function () {
   return del("build");
@@ -68,17 +69,30 @@ gulp.task("html", function(){
     ]))
     .pipe(gulp.dest("build"));
 });
+/*
+gulp.task("js", function () {
+  return pipeline(
+    gulp.src("source/js/script.js"),
+    gulp.dest("build/js")
+  );
+});
+*/
+gulp.task('js', function () {
+  return gulp.src("source/js/script.js")
+    .pipe(gulp.dest("build/js"));
+});
 
 gulp.task("server", function () {
   server.init({
     server: "build/"
   });
 
-  gulp.watch("source/less/**/*.less",gulp.series("css","refresh"));
+  gulp.watch("source/js/*.js", gulp.series("js","refresh"));
+  gulp.watch("source/less/**/*.less", gulp.series("css","refresh"));
   gulp.watch("source/img/sprite/*.svg", gulp.series("sprite","html","refresh"));
   gulp.watch("source/*.html", gulp.series("html","refresh"));
 // watches if new images were added from source/img
-  gulp.watch("source/img/**/*.{png,jpg,svg,webp}",gulp.series("copy","refresh"))
+  gulp.watch("source/img/**/*.{png,jpg,svg,webp}",gulp.series("copy","refresh"));
 });
 
 gulp.task("refresh", function (done) {
@@ -90,7 +104,7 @@ gulp.task("copy", function() {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**/*.{png,jpg,jpeg,svg,webp,ico}",
-    "source/js/**/*.js",
+    "source/js/*.js",
     "source/*.ico"
   ],{
     base: "source"
@@ -108,6 +122,7 @@ gulp.task("build", gulp.series(
   "css",
   "sprite",
   "html",
+  "js",
   "refresh"
 ));
 
