@@ -153,10 +153,11 @@ function changeDeliveryPrice(id) {
   }
 }
 
+// подсчитывает сумму товаров
 function calculateGoods() {
   let sumGoodsPrice = 0;
 
-  let listPrice = document.getElementsByClassName("order__price--number");
+  let listPrice = document.getElementsByClassName("order__cost");
 
   Array.prototype.forEach.call(listPrice, function (item) {
     sumGoodsPrice += Number(item.innerHTML)
@@ -164,3 +165,12 @@ function calculateGoods() {
 
   return sumGoodsPrice;
 }
+
+//подсчитывает скидку
+function calculateDiscount(sum = calculateGoods()) {
+  return Math.floor(sum * 0.05);
+}
+
+document.getElementById("order-discount").innerHTML = calculateDiscount();
+
+
