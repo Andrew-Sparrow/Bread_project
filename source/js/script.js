@@ -43,11 +43,8 @@ function notShow(){
   document.getElementById('pickup-block').style.display = 'block';
 }
 
-//Press radio by default
-document.getElementById("radio-pickup").click();
-
-//отображет место на карте в зависимости от выбранного способа доставки
-//отображет текст с адресом на карте в зависимости от выбранного способа доставки
+//отображение места на карте в зависимости от выбранного способа доставки
+//отображение текста с адресом на карте в зависимости от выбранного способа доставки
 function showDiv(element) {
   let pointAddress = document.getElementsByClassName("point__address");
   switch (+element.value) {
@@ -119,8 +116,8 @@ function init(){
     .add(myPlacemarkBut);
 }
 
-//изменяет способ доставки в карточке заказа, в соответствии с выбранным в блоке «Способ доставки» вариантом
-function changeDelivery(id) {
+//изменение способа доставки в карточке заказа, в соответствии с выбранным в блоке «Способ доставки» вариантом
+function getDelivery(id) {
   var x = document.getElementById("order-name");
 
   switch (id) {
@@ -136,8 +133,8 @@ function changeDelivery(id) {
   }
 }
 
-//изменяет цену доставки в карточке заказа, в соответствии с выбранным в блоке «Способ доставки» вариантом
-function changeDeliveryPrice(id) {
+//изменение цены доставки в карточке заказа, в соответствии с выбранным в блоке «Способ доставки» вариантом
+let getDeliveryPrice = function(id) {
   var deliveryPrice = document.getElementById("order-delivery-price");
 
   switch (id) {
@@ -151,26 +148,83 @@ function changeDeliveryPrice(id) {
       deliveryPrice.innerHTML = document.getElementById("delivery-pickup-price").innerHTML;
       break;
   }
-}
+  return Number(deliveryPrice.innerHTML);
+};
 
-// подсчитывает сумму товаров
-function calculateGoods() {
+//форматирование числа с разделителем тысяч
+let numberFormat = function(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+};
+
+//форматирование числа, удаление разделителя тысяч
+let numberFormatWithoutSpace = function(str) {
+  return str.replace(/\s/g, '');
+};
+
+//список цен товаров
+let listPrice = document.getElementsByClassName("order__cost");
+
+// подсчет суммы товаров
+let calculateGoods = function () {
   let sumGoodsPrice = 0;
-
-  let listPrice = document.getElementsByClassName("order__cost");
 
   Array.prototype.forEach.call(listPrice, function (item) {
     sumGoodsPrice += Number(item.innerHTML)
   });
 
   return sumGoodsPrice;
-}
+};
 
-//подсчитывает скидку
-function calculateDiscount(sum = calculateGoods()) {
+//подсчет скидки
+let getDiscount = function (sum = calculateGoods()) {
   return Math.floor(sum * 0.05);
-}
+};
 
-document.getElementById("order-discount").innerHTML = calculateDiscount();
+document.getElementById("order-discount").innerHTML = getDiscount();
 
+//подсчет суммы без учета доставки
+let getSum = function() {
+  let sum = calculateGoods() - getDiscount();
+  return Math.ceil(sum);
+};
 
+document.getElementById("order-sum").innerHTML = numberFormat(getSum());
+document.getElementById("order-sum").innerHTML = numberFormat(getSum());
+
+//подсчет итоговой суммы с учетом доставки
+let getTotal = function (id) {
+  let total = document.getElementById("order-total");
+  total.innerHTML = getSum() + getDeliveryPrice();
+  let totalHeader = document.getElementById("sum-header");
+
+  switch (id) {
+    case "delivery-courier-price":
+      total.innerHTML = getSum() + getDeliveryPrice();
+      totalHeader.innerHTML = getSum() + getDeliveryPrice();
+
+      //форматируем числа с разделителями тысяч
+      total.innerHTML = numberFormat(total.innerHTML);
+      totalHeader.innerHTML = numberFormat(totalHeader.innerHTML);
+      break;
+    case "delivery-transport-price":
+      total.innerHTML = getSum() + getDeliveryPrice();
+      totalHeader.innerHTML = getSum() + getDeliveryPrice();
+
+      //форматируем числа с разделителями тысяч
+      total.innerHTML = numberFormat(total.innerHTML);
+      totalHeader.innerHTML = numberFormat(totalHeader.innerHTML);
+      break;
+    case "delivery-pickup-price":
+      total.innerHTML = getSum() + getDeliveryPrice();
+      totalHeader.innerHTML = getSum() + getDeliveryPrice();
+
+      //форматируем числа с разделителями тысяч
+      total.innerHTML = numberFormat(total.innerHTML);
+      totalHeader.innerHTML = numberFormat(totalHeader.innerHTML);
+      break;
+  }
+  return total.innerHTML;//Number(total.innerHTML);
+};
+
+//делаем клик, что бы произвести расчет
+document.getElementById("radio-pickup").click();

@@ -102,7 +102,7 @@
         </a>
       </li>
     </ul>
-    <div class="sum">
+    <div class="sum" id="sum-header">
       13 990 ₽
     </div>
   </div>
@@ -149,7 +149,7 @@
             Самовывоз
           </td>
           <td class="order__price">
-            <span id="order-delivery-price">390</span> ₽
+            <span id="order-delivery-price">180</span> ₽
           </td>
         </tr>
         </tbody>
@@ -215,39 +215,39 @@
           </h3>
           <ul class="delivery__options">
             <li class="delivery__item">
-              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-courier" value="courier" onclick="changeDeliveryPrice('delivery-courier-price');show();changeDelivery('delivery-courier');">
+              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-courier" value="courier" onclick="getDeliveryPrice('delivery-courier-price');show();getDelivery('delivery-courier');getTotal('delivery-courier-price')">
               <label class="delivery__label delivery__label--courier" for="radio-courier">
-              <span class="delivery__text" id="delivery-courier">
-                Доставка курьерской службой
-              </span>
-              — <span id="delivery-courier-price">710</span> ₽
-                <span class="delivery__notice">
-                (Срок доставки — 1–3 дня)
-              </span>
+                <span class="delivery__text" id="delivery-courier">
+                  Доставка курьерской службой
+                </span>
+                — <span id="delivery-courier-price">710</span> ₽
+                  <span class="delivery__notice">
+                  (Срок доставки — 1–3 дня)
+                </span>
               </label>
             </li>
             <li class="delivery__item">
-              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-transport" value="transport" onclick="changeDeliveryPrice('delivery-transport-price');show();changeDelivery('delivery-transport');">
+              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-transport" value="transport" onclick="getDeliveryPrice('delivery-transport-price');show();getDelivery('delivery-transport');getTotal('delivery-transport-price')">
               <label class="delivery__label" for="radio-transport">
-              <span class="delivery__text" id="delivery-transport">
-                Доставка транспортной компанией
-              </span>
-                — <span id="delivery-transport-price">210</span> ₽
-                <span class="delivery__notice delivery__prepayment">
-                (Данный вид доставки возможен при полной
-                предоплате заказа. Срок доставки — 3–5 дней)
-              </span>
+                <span class="delivery__text" id="delivery-transport">
+                  Доставка транспортной компанией
+                </span>
+                  — <span id="delivery-transport-price">210</span> ₽
+                  <span class="delivery__notice delivery__prepayment">
+                  (Данный вид доставки возможен при полной
+                  предоплате заказа. Срок доставки — 3–5 дней)
+                </span>
               </label>
             </li>
             <li class="delivery__item">
-              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-pickup" value="pickup" checked onclick="changeDeliveryPrice('delivery-pickup-price');notShow();changeDelivery('delivery-pickup');">
+              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-pickup" value="pickup" checked onclick="getDeliveryPrice('delivery-pickup-price');notShow();getDelivery('delivery-pickup');getTotal('delivery-pickup-price')">
               <label class="delivery__label delivery__label--pickup" for="radio-pickup">
-              <span class="delivery__text" id="delivery-pickup">
-                Самовывоз
-              </span> — <span id="delivery-pickup-price">180</span> ₽
-                <span class="delivery__notice">
-                Доставка до пункта самовывоза займет 2–3 дня
-              </span>
+                <span class="delivery__text" id="delivery-pickup">
+                  Самовывоз
+                </span> — <span id="delivery-pickup-price">180</span> ₽
+                  <span class="delivery__notice">
+                  Доставка до пункта самовывоза займет 2–3 дня
+                </span>
               </label>
             </li>
           </ul>
