@@ -171,113 +171,116 @@
         <button class="tab__button tab__individual" onclick="openStatus(event, 'individual')" id="defaultOpen">Физическое лицо</button>
         <button class="tab__button tab__entity" onclick="openStatus(event, 'entity')">Юридическое лицо</button>
       </div>
-      <div class="formalization__content formalization__individual" id="individual">
-        <div class="contacts">
-          <h2 class="contacts__title">Контактные данные</h2>
-          <ul class="contacts__list">
-            <li class="contacts__item">
-              <label class="contacts__label" for="name">Имя</label>
-              <input class="contacts__name" id="name" placeholder="Александр">
-            </li>
-            <li class="contacts__item">
-              <label class="contacts__label" for="surname">Фамилия</label>
-              <input class="contacts__surname" id="surname" placeholder="Пушкин">
-            </li>
-            <li class="contacts__item">
-              <label class="contacts__label" for="email">Эл.почта</label>
-              <input class="contacts__email" id="email" placeholder="mail@mail.com">
-            </li>
-            <li class="contacts__item">
-              <label class="contacts__label" for="phone">Номер телефона</label>
-              <input class="contacts__phone" id="phone" placeholder="999 432 34-21">
-            </li>
-          </ul>
-        </div>
-        <div class="address">
-          <h2 class="address__title">Адрес и способ доставки</h2>
-          <ul class="address__list">
-            <li class="address__item">
-              <label class="address__label" for="country">Страна</label>
-              <select class="address__country" type="" id="country">
-                <option value="Russia">Россия</option>
-                <option value="Germany">Никарагуа</option>
-              </select>
-            </li>
-            <li>
-              <label class="address__label" for="city">Город</label>
-              <input class="address__city" id="city">
-            </li>
-          </ul>
-        </div>
-        <div class="delivery">
-          <h3 class="delivery__title">
-            Способ доставки
-          </h3>
-          <ul class="delivery__options">
-            <li class="delivery__item">
-              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-courier" value="courier" onclick="getDeliveryPrice('delivery-courier-price');show();getDelivery('delivery-courier');getTotal('delivery-courier-price')">
-              <label class="delivery__label delivery__label--courier" for="radio-courier">
-                <span class="delivery__text" id="delivery-courier">
-                  Доставка курьерской службой
-                </span>
-                — <span id="delivery-courier-price">710</span> ₽
-                  <span class="delivery__notice">
-                  (Срок доставки — 1–3 дня)
-                </span>
-              </label>
-            </li>
-            <li class="delivery__item">
-              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-transport" value="transport" onclick="getDeliveryPrice('delivery-transport-price');show();getDelivery('delivery-transport');getTotal('delivery-transport-price')">
-              <label class="delivery__label" for="radio-transport">
-                <span class="delivery__text" id="delivery-transport">
-                  Доставка транспортной компанией
-                </span>
-                  — <span id="delivery-transport-price">210</span> ₽
-                  <span class="delivery__notice delivery__prepayment">
-                  (Данный вид доставки возможен при полной
-                  предоплате заказа. Срок доставки — 3–5 дней)
-                </span>
-              </label>
-            </li>
-            <li class="delivery__item">
-              <input class="delivery__radio" type="radio" name="delivery-option" id="radio-pickup" value="pickup" checked onclick="getDeliveryPrice('delivery-pickup-price');notShow();getDelivery('delivery-pickup');getTotal('delivery-pickup-price')">
-              <label class="delivery__label delivery__label--pickup" for="radio-pickup">
-                <span class="delivery__text" id="delivery-pickup">
-                  Самовывоз
-                </span> — <span id="delivery-pickup-price">180</span> ₽
-                  <span class="delivery__notice">
-                  Доставка до пункта самовывоза займет 2–3 дня
-                </span>
-              </label>
-            </li>
-          </ul>
-        </div>
-        <div class="point" id="pickup-block">
-          <h3 class="point__title">
-            Пункт самовывоза
-          </h3>
-          <label class="point__label" for="point">
-            Станция метро
-          </label>
-          <select class="point__select" id="point" onchange="showDiv(this)">
-            <option class="point__option" value="0" selected>Кузнецкий мост</option>
-            <option class="point__option" value="1">Калужская</option>
-          </select>
-          <div class="point__map" id="map"></div>
-          <div class="point__address point__default" id="hidden_div0">Ул. Кузнецкий мост, 9/10 стр.2, офис 204 Ежедневно&nbspс&nbsp12:00&nbspдо&nbsp22:00
+      <form action="#" method="post" name="contactForm">
+        <div class="formalization__content formalization__individual" id="individual">
+          <div class="contacts">
+            <h2 class="contacts__title">Контактные данные</h2>
+            <ul class="contacts__list">
+              <li class="contacts__item">
+                <label class="contacts__label" for="id-firstName">Имя</label>
+                <input class="contacts__name" id="id-firstName" placeholder="Александр" name="firstName" onblur="validateName()" autofocus>
+                <p class="contacts__error" id="contact-error-name"></p>
+              </li>
+              <li class="contacts__item">
+                <label class="contacts__label" for="surname">Фамилия</label>
+                <input class="contacts__surname" id="surname" placeholder="Пушкин">
+              </li>
+              <li class="contacts__item">
+                <label class="contacts__label" for="email">Эл.почта</label>
+                <input class="contacts__email" id="email" placeholder="mail@mail.com">
+              </li>
+              <li class="contacts__item">
+                <label class="contacts__label" for="phone">Номер телефона</label>
+                <input class="contacts__phone" id="phone" placeholder="999 432 34-21">
+              </li>
+            </ul>
           </div>
-          <div class="point__address" id="hidden_div1">ул. Бутлерова д.17 корп.Б, офисный центр FRESH, лофт-офис 23</div>
+          <div class="address">
+            <h2 class="address__title">Адрес и способ доставки</h2>
+            <ul class="address__list">
+              <li class="address__item">
+                <label class="address__label" for="country">Страна</label>
+                <select class="address__country" type="" id="country">
+                  <option value="Russia">Россия</option>
+                  <option value="Germany">Никарагуа</option>
+                </select>
+              </li>
+              <li>
+                <label class="address__label" for="city">Город</label>
+                <input class="address__city" id="city">
+              </li>
+            </ul>
+          </div>
+          <div class="delivery">
+            <h3 class="delivery__title">
+              Способ доставки
+            </h3>
+            <ul class="delivery__options">
+              <li class="delivery__item">
+                <input class="delivery__radio" type="radio" name="delivery-option" id="radio-courier" value="courier" onclick="getDeliveryPrice('delivery-courier-price');show();getDelivery('delivery-courier');getTotal('delivery-courier-price')">
+                <label class="delivery__label delivery__label--courier" for="radio-courier">
+                  <span class="delivery__text" id="delivery-courier">
+                    Доставка курьерской службой
+                  </span>
+                  — <span id="delivery-courier-price">710</span> ₽
+                    <span class="delivery__notice">
+                    (Срок доставки — 1–3 дня)
+                  </span>
+                </label>
+              </li>
+              <li class="delivery__item">
+                <input class="delivery__radio" type="radio" name="delivery-option" id="radio-transport" value="transport" onclick="getDeliveryPrice('delivery-transport-price');show();getDelivery('delivery-transport');getTotal('delivery-transport-price')">
+                <label class="delivery__label" for="radio-transport">
+                  <span class="delivery__text" id="delivery-transport">
+                    Доставка транспортной компанией
+                  </span>
+                    — <span id="delivery-transport-price">210</span> ₽
+                    <span class="delivery__notice delivery__prepayment">
+                    (Данный вид доставки возможен при полной
+                    предоплате заказа. Срок доставки — 3–5 дней)
+                  </span>
+                </label>
+              </li>
+              <li class="delivery__item">
+                <input class="delivery__radio" type="radio" name="delivery-option" id="radio-pickup" value="pickup" checked onclick="getDeliveryPrice('delivery-pickup-price');notShow();getDelivery('delivery-pickup');getTotal('delivery-pickup-price')">
+                <label class="delivery__label delivery__label--pickup" for="radio-pickup">
+                  <span class="delivery__text" id="delivery-pickup">
+                    Самовывоз
+                  </span> — <span id="delivery-pickup-price">180</span> ₽
+                    <span class="delivery__notice">
+                    Доставка до пункта самовывоза займет 2–3 дня
+                  </span>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="point" id="pickup-block">
+            <h3 class="point__title">
+              Пункт самовывоза
+            </h3>
+            <label class="point__label" for="point">
+              Станция метро
+            </label>
+            <select class="point__select" id="point" onchange="showDiv(this)">
+              <option class="point__option" value="0" selected>Кузнецкий мост</option>
+              <option class="point__option" value="1">Калужская</option>
+            </select>
+            <div class="point__map" id="map"></div>
+            <div class="point__address point__default" id="hidden_div0">Ул. Кузнецкий мост, 9/10 стр.2, офис 204 Ежедневно&nbspс&nbsp12:00&nbspдо&nbsp22:00
+            </div>
+            <div class="point__address" id="hidden_div1">ул. Бутлерова д.17 корп.Б, офисный центр FRESH, лофт-офис 23</div>
+          </div>
+          <div class="comment">
+            <h3 class="comment__header">Комментарий к заказу</h3>
+            <textarea class="comment__textarea" rows="5" cols="38"></textarea>
+          </div>
         </div>
-        <div class="comment">
-          <h3 class="comment__header">Комментарий к заказу</h3>
-          <textarea class="comment__textarea" rows="5" cols="38"></textarea>
+        <div class="formalization__content formalization__entity" id="entity">
+          <h3>Paris</h3>
+          <p>Paris is the capital of France.</p>
         </div>
-      </div>
-      <div class="formalization__content formalization__entity" id="entity">
-        <h3>Paris</h3>
-        <p>Paris is the capital of France.</p>
-      </div>
-      <a class="main__button">К выбору способа оплаты</a>
+        <a type="submit" class="main__button">К выбору способа оплаты</a>
+      </form>
     </section>
   </div>
 </main>

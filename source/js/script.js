@@ -226,5 +226,81 @@ let getTotal = function (id) {
   return total.innerHTML;//Number(total.innerHTML);
 };
 
-//делаем клик, что бы произвести расчет
+//делаем клик, что бы произвести расчет в блоке заказа
 document.getElementById("radio-pickup").click();
+
+//проверяем поле - name, на валидность
+function validateName() {
+  let nameContact = document.contactForm.firstName.value;
+  let objError = document.getElementById("contact-error-name");
+  let regex = RegExp('([ёа-я, -, ЁА-Я]{1,})');
+
+//проверка, что поле не пустое
+  if (nameContact == "") {
+    objError.innerHTML = "Введите ваше имя";
+    addClassName("id-firstName", "contacts__name--error");
+    document.contactForm.firstName.focus();
+    return false;
+  }
+
+//проверка что вводятся буквы, а не цифры(добускаются латинские буквы)
+  if(!isNaN(nameContact)) {
+    objError.innerHTML = "поле должно содержать только буквы русского алфавита и символ «-» (дефис)";
+    addClassName("id-firstName", "contacts__name--error");
+    document.contactForm.firstName.focus();
+    return false;
+  }
+
+//проверка на кирилицу
+  if(!regex.test(nameContact)){
+    objError.innerHTML = "Поле должно содержать только кирилицу";
+    addClassName("id-firstName", "contacts__name--error");
+    document.contactForm.firstName.focus();
+    return false;
+  }
+
+  let element, arr, nameClass;
+  element = document.getElementById('id-firstName');
+  arr = element.className.split(" ");
+  nameClass = 'contacts__name--error';
+
+//если все проверки успешны, то удаляем класс сигнализирующей об ошибке в input'е
+//подобный вид проверка сделан, что бы код работал в IE9
+  if (arr.indexOf(nameClass) != -1) {
+    deleteClass('id-firstName', 'contacts__name--error');
+    objError.style.display = "none";
+  }
+
+  return true;
+}
+
+/*
+* добавляет имя к классу, работает в IE9
+* @param {string} id - id елемента к которому надо добавить класс
+* @param {string} nameClass - название добавляемого класса
+*/
+function addClassName(id, nameClass) {
+  var element, arr;
+  element = document.getElementById(id);
+  arr = element.className.split(" ");
+
+  if (arr.indexOf(nameClass) == -1) {
+    element.className += " " + nameClass;
+  }
+}
+
+/*
+* удаляет класс у элемента, работает в IE9
+* @param {string} id - id елемента у которого надо удалить класс
+* @param {string} classForDelete - название удаляемого класса
+*/
+function deleteClass(id, classForDelete) {
+  var id = id;
+  var classForDelete = classForDelete;
+  var regex = new RegExp(classForDelete );
+
+  var element = document.getElementById(id);
+  //element.className = element.className.replace(/\bmyclass\b/g, "");
+
+  element.className = element.className.replace(regex, "");
+}
