@@ -178,12 +178,13 @@
             <ul class="contacts__list">
               <li class="contacts__item">
                 <label class="contacts__label" for="id-firstName">Имя</label>
-                <input class="contacts__name" id="id-firstName" placeholder="Александр" name="firstName" onblur="validateName()" autofocus>
-                <p class="contacts__error" id="contact-error-name"></p>
+                <input class="contacts__name" id="id-firstName" placeholder="Александр" name="firstName" onblur="validateName(this)" autofocus>
+                <p class="contacts__error" id="contact-error-text-firstName"></p>
               </li>
               <li class="contacts__item">
                 <label class="contacts__label" for="surname">Фамилия</label>
-                <input class="contacts__surname" id="surname" placeholder="Пушкин">
+                <input class="contacts__surname" id="surname" placeholder="Пушкин" name="lastName" onblur="validateName(this)">
+                <p class="contacts__error" id="contact-error-text-lastName"></p>
               </li>
               <li class="contacts__item">
                 <label class="contacts__label" for="email">Эл.почта</label>

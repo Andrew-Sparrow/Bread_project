@@ -229,45 +229,49 @@ let getTotal = function (id) {
 //делаем клик, что бы произвести расчет в блоке заказа
 document.getElementById("radio-pickup").click();
 
-//проверяем поле - name, на валидность
-function validateName() {
-  let nameContact = document.contactForm.firstName.value;
-  let objError = document.getElementById("contact-error-name");
+/*проверяем поле - с именем и фамилией, на валидность
+* @param obj - DOM объект
+*/
+function validateName(obj) {
+  let nameContact = obj.value;
+  let objError = obj.nextElementSibling;  //блок с текстом ошибки
   let regex = RegExp('([ёа-я, -, ЁА-Я]{1,})');
 
 //проверка, что поле не пустое
   if (nameContact == "") {
-    objError.innerHTML = "Введите ваше имя";
-    addClassName("id-firstName", "contacts__name--error");
-    document.contactForm.firstName.focus();
+    objError.innerHTML = "Введите ваше имя(фамилию)";
+    addClassName(obj.id, "contacts__name--error");
+    objError.style.display = "block";
+    obj.focus();
     return false;
   }
 
 //проверка что вводятся буквы, а не цифры(добускаются латинские буквы)
   if(!isNaN(nameContact)) {
     objError.innerHTML = "поле должно содержать только буквы русского алфавита и символ «-» (дефис)";
-    addClassName("id-firstName", "contacts__name--error");
-    document.contactForm.firstName.focus();
+    addClassName(obj.id, "contacts__name--error");
+    objError.style.display = "block";
+    obj.focus();
     return false;
   }
 
 //проверка на кирилицу
   if(!regex.test(nameContact)){
-    objError.innerHTML = "Поле должно содержать только кирилицу";
-    addClassName("id-firstName", "contacts__name--error");
-    document.contactForm.firstName.focus();
+    objError.innerHTML = "Поле должно содержать только буквы русского алфавита";
+    addClassName(obj.id, "contacts__name--error");
+    objError.style.display = "block";
+    obj.focus();
     return false;
   }
 
-  let element, arr, nameClass;
-  element = document.getElementById('id-firstName');
-  arr = element.className.split(" ");
-  nameClass = 'contacts__name--error';
+  let arr, nameClassError;
+  arr = obj.className.split(" ");
+  nameClassError = 'contacts__name--error';
 
 //если все проверки успешны, то удаляем класс сигнализирующей об ошибке в input'е
 //подобный вид проверка сделан, что бы код работал в IE9
-  if (arr.indexOf(nameClass) != -1) {
-    deleteClass('id-firstName', 'contacts__name--error');
+  if (arr.indexOf(nameClassError) != -1) {
+    deleteClass(obj.id, 'contacts__name--error');
     objError.style.display = "none";
   }
 
