@@ -34,6 +34,20 @@
   box-sizing: border-box;
 }
 
+.contacts__phone {
+  //background: linear-gradient(180deg, #ccc 100%, #0000);
+  //background-position: 20%;
+  //background-repeat: repeat-y;
+  //background-size: 2px auto;
+  //padding-left: 40px;
+  font-size: 16px;
+  line-height: 19.5px;
+  margin: 0;
+  margin-left: -4px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 .contacts__phone::placeholder,
 .contacts__email::placeholder,
 .contacts__surname::placeholder,
@@ -41,6 +55,20 @@
   color: #817068;
   font-size: 16px;
   font-family: @calibri;
+}
+
+.contacts__code {
+  width: 20px;
+  line-height: 26.5px;
+  padding-left: 2px;
+  border: 1px solid #c4b7b1;
+  border-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.contacts__input {
+  font-size: 16px;
 }
 
 .contacts__error {
@@ -59,11 +87,11 @@
 }
 
 @media (min-width: @tablet-width) {
-  .contacts__phone,
   .contacts__email,
+  .contacts__phone,
   .contacts__surname,
   .contacts__name {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .contacts__list {

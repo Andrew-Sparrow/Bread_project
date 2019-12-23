@@ -178,21 +178,24 @@
             <ul class="contacts__list">
               <li class="contacts__item">
                 <label class="contacts__label" for="id-firstName">Имя</label>
-                <input class="contacts__name" id="id-firstName" placeholder="Александр" name="firstName" onblur="validateName(this)" autofocus>
+                <input class="contacts__name contacts__input" id="id-firstName" placeholder="Александр" name="firstName" onblur="validateName(this)" autofocus>
                 <p class="contacts__error" id="contact-error-text-firstName"></p>
               </li>
               <li class="contacts__item">
                 <label class="contacts__label" for="surname">Фамилия</label>
-                <input class="contacts__surname" id="surname" placeholder="Пушкин" name="lastName" onblur="validateName(this)">
+                <input class="contacts__surname contacts__input" id="surname" placeholder="Пушкин" name="lastName" onblur="validateName(this)">
                 <p class="contacts__error" id="contact-error-text-lastName"></p>
               </li>
               <li class="contacts__item">
                 <label class="contacts__label" for="email">Эл.почта</label>
-                <input class="contacts__email" id="email" placeholder="mail@mail.com">
+                <input class="contacts__email contacts__input" id="email" placeholder="mail@mail.com">
               </li>
               <li class="contacts__item">
                 <label class="contacts__label" for="phone">Номер телефона</label>
-                <input class="contacts__phone" id="phone" placeholder="999 432 34-21">
+                <div class="contacts__wrapper">
+                  <input class="contacts__code contacts__input" id="phone-code" value="+7">
+                  <input class="contacts__phone contacts__input" id="phone" placeholder="999 432 34-21">
+                </div>
               </li>
             </ul>
           </div>
