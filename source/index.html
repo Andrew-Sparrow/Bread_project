@@ -276,7 +276,7 @@
           </div>
           <div class="comment">
             <h3 class="comment__header">Комментарий к заказу</h3>
-            <textarea class="comment__textarea" rows="5" cols="38"></textarea>
+            <textarea class="comment__textarea" id="id-textarea" rows="5" cols="38" oninput="sanitizeHTML(this);"></textarea>
           </div>
         </div>
         <div class="formalization__content formalization__entity" id="entity">

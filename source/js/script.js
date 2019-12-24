@@ -304,7 +304,6 @@ function deleteClass(id, classForDelete) {
   var regex = new RegExp(classForDelete );
 
   var element = document.getElementById(id);
-  //element.className = element.className.replace(/\bmyclass\b/g, "");
 
   element.className = element.className.replace(regex, "");
 }
@@ -313,3 +312,9 @@ document.getElementById('phone').addEventListener('input', function (e) {
   var x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
   e.target.value =!x[1] ? x[1] : ' ' + x[1] + ' ' + x[2] + ' ' + (x[3] ? ' ' + x[3] : '') + (x[4] ? '-' + x[4] : '');
 });
+
+function sanitizeHTML(obj) {
+  obj.value = obj.value.replace("ф", "");
+  //object.value ='asdf';
+  console.log(obj.value);
+}
