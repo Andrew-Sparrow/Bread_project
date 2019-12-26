@@ -18,14 +18,31 @@
   border-radius: 2px;
 }
 
+.comment__error {
+  width: 280px;
+  box-sizing: border-box;
+  padding: 0;
+  padding-left: 10px;
+  margin: 0;
+  margin-bottom: 15px;
+  color: #958781;
+  font-size: 11px;
+  word-break: break-word;
+}
+
 @media (min-width: @tablet-width) {
-  .comment__textarea {
+  .comment__textarea,
+  .comment__error {
     width: @tablet-container;
   }
 }
 
-@media (min-width: @tablet-width) {
+@media (min-width: @desktop-width) {
   .comment__textarea {
+    width: 384px;
+  }
+
+  .comment__error {
     width: 384px;
   }
 }

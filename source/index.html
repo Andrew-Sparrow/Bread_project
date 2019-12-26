@@ -178,7 +178,7 @@
             <ul class="contacts__list">
               <li class="contacts__item">
                 <label class="contacts__label" for="id-firstName">Имя</label>
-                <input class="contacts__name contacts__input" id="id-firstName" placeholder="Александр" name="firstName" onblur="validateName(this)" autofocus>
+                <input class="contacts__name contacts__input" id="id-firstName" placeholder="Александр" name="firstName" onblur="validateName(this)">
                 <p class="contacts__error" id="contact-error-text-firstName"></p>
               </li>
               <li class="contacts__item">
@@ -275,8 +275,9 @@
             <div class="point__address" id="hidden_div1">ул. Бутлерова д.17 корп.Б, офисный центр FRESH, лофт-офис 23</div>
           </div>
           <div class="comment">
-            <h3 class="comment__header">Комментарий к заказу</h3>
+            <h3 class="comment__header">Комментарий к заказу*</h3>
             <textarea class="comment__textarea" id="id-textarea" rows="5" cols="38" oninput="sanitizeHTML(this);"></textarea>
+            <p class="comment__error">* - поле «Комментарий к заказу» не должно содержать HTML-разметки и JS-кода</p>
           </div>
         </div>
         <div class="formalization__content formalization__entity" id="entity">

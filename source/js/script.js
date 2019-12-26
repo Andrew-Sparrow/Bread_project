@@ -313,8 +313,7 @@ document.getElementById('phone').addEventListener('input', function (e) {
   e.target.value =!x[1] ? x[1] : ' ' + x[1] + ' ' + x[2] + ' ' + (x[3] ? ' ' + x[3] : '') + (x[4] ? '-' + x[4] : '');
 });
 
+//удаляет HTML теги из введенного в поле текста
 function sanitizeHTML(obj) {
-  obj.value = obj.value.replace("ф", "");
-  //object.value ='asdf';
-  console.log(obj.value);
+  obj.value = obj.value.replace(/(<script(\s|\S)*?<\/script>)|(<style(\s|\S)*?<\/style>)|(<!--(\s|\S)*?-->)|(<\/?(\s|\S)*?>)/gim, "");
 }
